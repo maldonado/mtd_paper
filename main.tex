@@ -1,27 +1,26 @@
 \documentclass[conference]{IEEEtran}
 
-\usepackage{ifpdf}
-\usepackage[cmex10]{amsmath}
+\usepackage{amssymb,amsmath}
 \usepackage{wrapfig}
 \usepackage{multirow}
-\usepackage[pdftex]{graphicx}
-\usepackage{mdwmath}
-\usepackage{mdwtab}
+\usepackage{graphicx}
+\usepackage{algorithm}
 \usepackage{algorithmic}
 \usepackage{times}
 \usepackage{cite}
 \usepackage{url}
 \usepackage{booktabs}
-\usepackage[tight,footnotesize]{subfigure}
+\usepackage{subfigure}
 \usepackage{fancybox}
 \usepackage{color}
 \usepackage{array}
+\usepackage{subfigure}
 \usepackage{balance}
-\usepackage[font=footnotesize]{subfig}
 \usepackage{epstopdf}
 \usepackage{array}
-\usepackage{fixltx2e}
-\usepackage{stfloats}
+\usepackage[normalem]{ulem}
+
+
 
 \newcommand{\everton}[1]{\textcolor{yellow}{{\it [Everton: #1]}}}
 \newcommand{\todo}[1]{\colorbox{yellow}{\textbf{[#1]}}}
@@ -42,13 +41,13 @@
 \newcommand{\rqiii}{\textbf{}}
 
 \begin{document}
-\title{Paper Title here}
+\title{A Taxonomy of Self-Admitted Technical Debt Types}
 
-\author{\IEEEauthorblockN{Everton da S. Maldonado}
+\author{\IEEEauthorblockN{Everton da S. Maldonado and Emad Shihab}
 
 \IEEEauthorblockA{Department of Computer Science and Software Engineering\\Concordia University,
 Montreal, Canada\\
-\url{everton.maldonado@gmail.com}}}
+\url{e_silvam@encs.concordia.ca}, \url{emad.shihab@concordia.ca}}}
 
 \maketitle
 
@@ -68,6 +67,10 @@ Montreal, Canada\\
 \section{Approach}
 \label{sec:approach}
 \input{approach}
+
+\section{Case Stud Results}
+\label{sec:results}
+\input{results}
 
 \section{Threats to validity}
 \label{sec:threats_to_validity}

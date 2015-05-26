@@ -5,6 +5,43 @@
 %   \includegraphics[width=1\textwidth]{figures/Approach2}
 % \end{figure*}
 
-\subsection{Data Extraction}
+\todo{create figure of approach}
+The main goal of our study is to identify and quantify the different types of self-admitted technical debt found in source code comments. Figure I shows an overview of our approach. The following subsections detail each step of our approach.
+
+\subsection{Data Extraction} % (fold)
+\label{sub:data_extraction}
+
+To perform our study, we obtain the source of four open source projects, namely Apache Ant, Apache Jmeter, ArgoUML and JFreeChart. We chose the aforementioned projects, since they belong to different domains, and vary in size (e.g., LOC), and in the number of contributors.
+
+Table \ref{tab:project_details} provides statistics about each of the projects used in our study. In total, we obtained more than 132,501 comments, found in 6,330 files. We also include the release used, the number of classes, and the total lines of code (LOC). In our study, we only use the Java files to calculate the LOC. It is important to notice that the number of comments shown for each project does not represent the number of commented lines, but rather the number of individual line, block, and Javadoc comments.
+/todo{complement details table with more information about the projects}
+% subsection data_extraction (end)
  
-\subsection{Parse Source Code}
+\subsection{Parse Source Code} % (fold)
+\label{sub:parse_source_code}
+After obtaining the source code of all projects, we extract the comments from their source code. We use JDeodorant \cite{Tsantalis2008CSMR}, an open-source Eclipse plug-in, to parse the source code and extract the code comments. Once extracted, we store all comments in a relational database to facilitate the processing of the data.
+% subsection parse_source_code (end) 
+
+\subsection{Filter Comments} % (fold)
+\label{sub:filter_comments}
+
+\todo{elaborate more the reason to filter comments}
+In this step we look for source code comments that are mostly likely to be irrelevant for our study. Filtering these comments is important because it makes the manual classification more feasible. We apply a set of 4 heuristics to filter out unwanted comments. 
+
+We apply first a heuristic to remove license comments. When license comments are added to the Java files in a project they are generally placed in the first lines of the file, before the class declaration. Based on this knowledge we created a heuristic that eliminates comments that are placed before the class declaration. 
+% To validate the result of this heuristic we examined a sample of the comments being removed to check if they were indeed license comments. We noticed that some comments were placed before the class declaration although they were not license comments. To mitigate the risk of eliminating important comments, we added one more condition: If the comment contains one of the task-reserved words (e.g. “todo”, “fixme”, or “xxx”) we do not remove the comment.
+
+Second, a heuristic to merge multiple line comments. Some times developers make long comments, using multiple single-line comments instead of a Block comment. Treating every single line of a long comment as an individual comment causes us to miss important context details that could be recovered by treating all single-line comments as a single block comment. Therefore, we create this heuristic that searches for consecutive single-line comments and groups them.
+
+Third, a heuristic to remove commented source code. Commented source code can be found for several different reasons. One of the possibilities could be that the code is not being currently used, or if the particular piece of code is used to debug the program. Since commented code does not have Self-admitted Design Technical Debt, we remove commented source code using a regular expressions that captures typical Java code structures.
+
+Fourth, a heuristic to remove Javadoc comments. The Javadoc comments contain information about the purpose and use of methods and classes. That said, Javadoc comments rarely mention Self-admitted Design Technical Debt. Therefore, we create a heuristic that removes Javadoc comments. To mitigate the risk of eliminating some correct cases, we added one exception - if the comment contains one of the task-reserved words (e.g. “todo”, “fixme”, or “xxx”) we keep that Javadoc comment.
+
+The steps mentioned above significantly reduced the number of comments in our dataset and helped us focus on the most applicable and insightful comments. For example, in the Apache Ant project, applying the above steps helped reduce the number of comments from 21,587 to 4,140 comments.
+
+% subsection filter_comments (end)
+
+\subsection{Manual Classification} % (fold)
+\label{sub:manual_classification}
+
+% subsection manual_classification (end)
