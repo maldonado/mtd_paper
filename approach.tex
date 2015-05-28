@@ -29,7 +29,6 @@ After obtaining the source code of all projects, we extract the comments from th
 In this step we look for source code comments that are mostly likely to be irrelevant for our study. Filtering these comments is important because it makes the manual classification more feasible. We apply a set of 4 heuristics to filter out unwanted comments. 
 
 We apply first a heuristic to remove license comments. When license comments are added to the Java files in a project they are generally placed in the first lines of the file, before the class declaration. Based on this knowledge we created a heuristic that eliminates comments that are placed before the class declaration. 
-% To validate the result of this heuristic we examined a sample of the comments being removed to check if they were indeed license comments. We noticed that some comments were placed before the class declaration although they were not license comments. To mitigate the risk of eliminating important comments, we added one more condition: If the comment contains one of the task-reserved words (e.g. “todo”, “fixme”, or “xxx”) we do not remove the comment.
 
 Second, a heuristic to merge multiple line comments. Some times developers make long comments, using multiple single-line comments instead of a Block comment. Treating every single line of a long comment as an individual comment causes us to miss important context details that could be recovered by treating all single-line comments as a single block comment. Therefore, we create this heuristic that searches for consecutive single-line comments and groups them.
 
@@ -43,5 +42,11 @@ The steps mentioned above significantly reduced the number of comments in our da
 
 \subsection{Manual Classification} % (fold)
 \label{sub:manual_classification}
+To help us in the manual classification task we developed a tool that search for unclassified comments in the database and present classification options that will be assigned to the source code comment. Using this tool we were able to classify XXX comments into one of following categories of technical debt: Documentation Debt, Design Debt, Defect Debt, Implementation Debt or Text  Debt.  
+
+\todo{explain they here or in results ?}
+
+
+
 
 % subsection manual_classification (end)
