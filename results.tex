@@ -1,16 +1,115 @@
-The goal of our study is to better understand technical debt found in source code comments. To do so, we first manually analyze the comments identifying technical debt comments in the selected projects (RQ1). Then, we classify the comments into technical debt types accordingly with their nature (RQ2). In the remainder of this section we detail the motivation, approach and results for each of our research questions.  
+The goal of our study is to better understand technical debt found in source code comments. To do so, we first manually analyze the comments identifying technical debt comments in the selected projects. First, we classify the comments into technical debt types accordingly with their nature (RQ1). Second, we quantify these comments identifying the most common types (RQ2). In the remainder of this section we detail the motivation, approach and results for each of our research questions.  
 
 \vspace{3mm}
 \noindent\rqi
 \vspace{3mm}
 
-\noindent\textbf{Motivation:} Understand the frequency of this kind of comments using projects from different domains and size. Analyzing source code comments open several opportunities to get insights obtained from human elicitation. These comments can point the direction to tools and future maintenance work as they were analyzed by the authors of the the program. 
+% question one what are the most common types that can be found in self-admitted technical debt and show examples.
+% question two show the amount and distribution of each one of the found types. 
+
+\noindent\textbf{Motivation:} As shown in previous work \cite{Potdar2014ICSME}, self-admitted technical can be an indicative of non-optimal solutions. However, technical debt is a broad term, and there are many different types of debt \cite{Alves2014MTD}. Although we know that self-admitted technical exists, the different kinds of self-admitted technical debt is still  unknown. Answering this question is important as different types of debt has different approaches to be solved, and therefore each different type may need a tailored solution.
+
+% has Understand the frequency of this kind of comments using projects from different domains and size. Analyzing source code comments open several opportunities to get insights obtained from human elicitation. These comments can point the direction to tools and future maintenance work as they were analyzed by the authors of the the program. 
 
 \vspace{1mm}
-\noindent\textbf{Approach:} 
+\noindent\textbf{Approach:} To identify the different types of debt found in the comments we manually read trough all filtered comments of all projects as described in Section \ref{sec:approach}. While examining the comments we took advantage of the technical debt types and definitions provided by Alves \textit{et al.} in a previous work. We use the following types of debt in our analyzes: without classification, design debt, defect debt, documentation debt, requirement debt and  test debt.
 
+During the classification we notice that some comments can be classified in more than one type of debt (e.g., A comment reporting a Design Debt can also means that a particular piece of code is causing an unexpected behavior, which is a Defect Debt). Although this is a delicate situation, and may have different interpretations depending of who is reading the comments, we defined that each comment would have just one classification type for the sake of clarity. To mitigate the chance of misclassifying these comments, we take in consideration the more meaningful type for each comment in a given scenario. To do so, a more detail investigation was necessary (i.e., looking at the source code). In total we read and classified 33,093 comments from five open source projects. The classification took approximately 85 hours and was performed by the first author of the paper. 
+
+
+% first we analyze the total amount of technical debt and each type of technical debt that we use with real examples.
 \vspace{1mm}
-\noindent\textbf{Results:} Put some examples of the found technical debt comments, explain that for some of them the classification was clear but for others were necessary more investigation looking into the source code to understand the context. explain the numbers found in the projects. create a table to present this.
+\noindent\textbf{Results:} Table \ref{tab:technical_debt_project} shows the total amount of self-admitted technical debt found in the analyzed projects. For example, in Apache Ant out of the 4,140 analyzed comments 134 turnout to be classified as self-admitted technical debt, which represents 3.2\% of the comments of the analyzed comments. 
+
+Analyzing the results of the classification we found that the comments could be classified in one of the following types of debt: design debt, defect debt, documentation debt, requirement debt and  test debt. 
+ 
+ \todo{create examples tables}
+To a comment be classified as design debt it has to indicate that there is a problem with design of the code (e.g., misplaced code, lack of abstraction, long method). Table \ref{tab:design_debt_detail} show some concrete examples of the comments classified as Design Debt. 
+
+In defect debt comments the author/s states that that particular piece of code do not have the expected behavior. For documentation debt comments the author/s wrote that there is not documentation supporting that part of the program. Requirement debt comments express the fact that incompleteness of the method, class or program. Finally, test debt comments are the ones that express the need for implementation or improvement of the current tests. We show examples of defect, documentation, requirement and test debt in Tables \ref{tab:defect_debt_detail}, \ref{tab:documentation_debt_detail}, \ref{tab:requeriment_debt_detail}, \ref{tab:test_debt_detail} respectively.   
+
+\begin{table}[!hbt]
+      \begin{center}
+            \caption{Design self-admitted technical examples}
+            \label{tab:design_debt_detail}
+            \begin{tabular}{l| c }
+            \toprule
+            \textbf{Project}      & \textbf{Found comment}     \\ \midrule 
+              Apache Ant          &   // Should move to a separate public class - and have API to add // listeners, etc.\\                                   
+              Apache Jmeter       &   \\                                   
+              ArgoUML             &   \\                                   
+              Columba             &   \\                                   
+              JFreeChart          &   \\ \bottomrule
+            \end{tabular}
+      \end{center}
+\end{table}
+
+\begin{table}[!hbt]
+      \begin{center}
+            \caption{Defect self-admitted technical examples}
+            \label{tab:defect_debt_detail}
+            \begin{tabular}{l| c }
+            \toprule
+            \textbf{Project}      & \textbf{Found comment}     \\ \midrule 
+              Apache Ant          & // check first that it is not already loaded otherwise // consecutive runs seems to end into an OutOfMemoryError // or it fails when there is a native library to load // several times. // this is far from being perfect but should work // in most cases. \\                                   
+              Apache Jmeter       &   \\                                   
+              ArgoUML             &   \\                                   
+              Columba             &   \\                                   
+              JFreeChart          &   \\ \bottomrule
+            \end{tabular}
+      \end{center}
+\end{table}
+
+\begin{table}[!hbt]
+      \begin{center}
+            \caption{Documentation self-admitted technical examples}
+            \label{tab:documentation_debt_detail}
+            \begin{tabular}{l| c }
+            \toprule
+            \textbf{Project}      & \textbf{Found comment}     \\ \midrule 
+              Apache Ant          &   \\                                   
+              Apache Jmeter       &   \\                                   
+              ArgoUML             &   \\                                   
+              Columba             &   \\                                   
+              JFreeChart          &   \\ \bottomrule
+            \end{tabular}
+      \end{center}
+\end{table}
+
+\begin{table}[!hbt]
+      \begin{center}
+            \caption{Requirement self-admitted technical examples}
+            \label{tab:requeriment_debt_detail}
+            \begin{tabular}{l| c }
+            \toprule
+            \textbf{Project}      & \textbf{Found comment}     \\ \midrule 
+              Apache Ant          &   \\                                   
+              Apache Jmeter       &   \\                                   
+              ArgoUML             &   \\                                   
+              Columba             &   \\                                   
+              JFreeChart          &   \\ \bottomrule
+            \end{tabular}
+      \end{center}
+\end{table}
+
+\begin{table}[!hbt]
+      \begin{center}
+            \caption{Test self-admitted technical examples}
+            \label{tab:test_debt_detail}
+            \begin{tabular}{l| c }
+            \toprule
+            \textbf{Project}      & \textbf{Found comment}     \\ \midrule 
+              Apache Ant          &   \\                                   
+              Apache Jmeter       &   \\                                   
+              ArgoUML             &   \\                                   
+              Columba             &   \\                                   
+              JFreeChart          &   \\ \bottomrule
+            \end{tabular}
+      \end{center}
+\end{table}
+
+
+Put some examples of the found technical debt comments, explain that for some of them the classification was clear but for others were necessary more investigation looking into the source code to understand the context. explain the numbers found in the projects. create a table to present this.
 
 \vspace{3mm}
 \noindent\rqii
@@ -36,15 +135,16 @@ Making the dataset used in this study available to the software engineering comm
 
 \begin{table*}[!hbt]
       \begin{center}
-            \caption{Project Details}
-            \label{tab:project_details}
-            \begin{tabular}{l| c c c c }
+            \caption{Self-admitted technical debt per project}
+            \label{tab:technical_debt_project}
+            \begin{tabular}{l| c c c }
             \toprule
-            \textbf{Project}   & \textbf{Release}          & \textbf{Analyzed comments}     & \textbf{Self-admitted TD comments} & \textbf{Percentage} \\ \midrule 
-              Apache Ant       & 1.7.0                     & 4,140                          & 134                                & 3.2  \\                                   
-              Apache Jmeter    & 2.10                      & 8,163                          & 375                                & 4.6  \\                                   
-              ArgoUML          & 0.34                      & 9,788                          & 1,653                              & 16.8 \\                                   
-              JFreeChart       & 1.0.19                    & 4,433                          & 219                                & 4.9  \\ \bottomrule
+            \textbf{Project}      & \textbf{Analyzed comments}     & \textbf{Self-admitted TD comments} & \textbf{Percentage} \\ \midrule 
+              Apache Ant          & 4,140                          & 134                                & 3.2  \\                                   
+              Apache Jmeter       & 8,163                          & 375                                & 4.6  \\                                   
+              ArgoUML             & 9,788                          & 1,653                              & 16.8 \\                                   
+              Columba             & 6,569                          & 295                                & 4.4 \\                                   
+              JFreeChart          & 4,433                          & 219                                & 4.9  \\ \bottomrule
             \end{tabular}
       \end{center}
 \end{table*}

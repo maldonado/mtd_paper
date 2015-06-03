@@ -14,7 +14,7 @@ The main goal of our study is to identify and quantify the different types of se
 To perform our study, we obtain the source of four open source projects, namely Apache Ant, Apache Jmeter, ArgoUML and JFreeChart. We chose the aforementioned projects, since they belong to different domains, and vary in size (e.g., LOC), and in the number of contributors.
 
 Table \ref{tab:project_details} provides statistics about each of the projects used in our study. In total, we obtained more than 132,501 comments, found in 6,330 files. We also include the release used, the number of classes, and the total lines of code (LOC). In our study, we only use the Java files to calculate the LOC. It is important to notice that the number of comments shown for each project does not represent the number of commented lines, but rather the number of individual line, block, and Javadoc comments.
-/todo{complement details table with more information about the projects}
+/todo{complement details table with more information about the project, put references from where I took the number of developers}
 % subsection data_extraction (end)
  
 \subsection{Parse Source Code} % (fold)
@@ -48,3 +48,19 @@ To manually classify the comments we first developed a Java based tool that show
 % into one of following categories of technical debt: Documentation Debt, Design Debt, Defect Debt, Implementation Debt or Text  Debt.  
 
 % subsection manual_classification (end)
+
+\begin{table*}[!hbt]
+      \begin{center}
+            \caption{Project Details}
+            \label{tab:project_details}
+            \begin{tabular}{l| c c c c }
+            \toprule
+            \textbf{Project}   & \textbf{Release}          & \textbf{LOC}     & \textbf{\# of comments} & \textbf{\# of contributors} \\ \midrule 
+              Apache Ant       & 1.7.0                     & 115,881          & 21,587                                & 70  \\                                   
+              Apache Jmeter    & 2.10                      & 81,307           & 20,084                                & 32  \\                                   
+              ArgoUML          & 0.34                      & 176,839          & 67,716                                & 87  \\                                   
+              Columba          & 1.4                       & 100,200          & 33,895                                & 9   \\                                   
+              JFreeChart       & 1.0.19                    & 132,296          & 23,474                                & 18  \\ \bottomrule
+            \end{tabular}
+      \end{center}
+\end{table*}
