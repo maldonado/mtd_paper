@@ -1,4 +1,4 @@
-The goal of our study is to understand technical debt found in source code comments. To do so, we first manually analyze the comments identifying technical debt comments in the selected projects. We formalize our research question in two parts first, we classify the comments into technical debt types accordingly with their nature. Second, we quantify these comments identifying the most common types of self-admitted technical debt. In the remainder of this section we detail the motivation, approach and results for our research question.  
+The goal of our study is to understand technical debt found in source code comments. To do so, we first manually analyze the comments identifying technical debt comments in the selected projects. We divide our research question in two parts first, we classify the comments into technical debt types accordingly with their nature. Second, we quantify these comments identifying the most common types of self-admitted technical debt. In the remainder of this section we detail the motivation, approach and results for our research question.  
 
 \vspace{3mm}
 \noindent\rqi
@@ -16,7 +16,7 @@ During the classification we notice that some comments can be classified in more
 
 \begin{itemize}
   \item \textbf{Self-admitted Design debt:} 
-  This comments indicates that there is a problem with the design of the code. Comments about misplaced code, lack of abstraction, long methods, poor implementation, workarounds and temporary solution were classified in this type. Lets consider the following comments:
+  These comments indicates that there is a problem with the design of the code. They can be comments about misplaced code, lack of abstraction, long methods, poor implementation, workarounds and temporary solution were classified in this type. Lets consider the following comments:
   
   \vspace{1mm}
   \begin{displayquote}
@@ -54,23 +54,73 @@ During the classification we notice that some comments can be classified in more
 
   The above comments expressed doubt and uncertainty when implementing the code and were considered as self-admitted design debt as well.
 
-  \item \textbf{Defect debt:} In defect debt comments the author states that that particular piece of code do not have the expected behavior.
+  \item \textbf{Self-admitted Defect debt:} In defect debt comments the author states that a particular piece of code do not have the expected behavior, meaning that there is a defect in the code. 
+  
   \vspace{1mm}
   \begin{displayquote}
-      \textit{``''}
+      \textit{``// Bug in above method''}
 
       \vspace{1mm}
 
-      \textit{``''}
+      \textit{``// WARNING: the OutputStream version of this doesn't work!''}
   \end{displayquote}
   \vspace{1mm}
+  
+  As shown in these examples there are defects that are known by the developers, but for some reason is not fixed yet. 
 
-  \item \textbf{Documentation debt:} For documentation debt comments the author wrote that there is not documentation supporting that part of the program.
+  \item \textbf{Documentation debt:} In the documentation debt comments the author express that there is not proper documentation supporting that part of the program.
+  
+  \vspace{1mm}
+  \begin{displayquote}
+  	\textit{``**FIXME** This function needs documentation''}
+  	
+  	\vspace{1mm}
+  	
+  	\textit{``// TODO Document the reason for this''}
+  \end{displayquote}
+  \vspace{1mm}
+  
+  \item \textbf{Self-admitted Requirement debt:} Requirement debt comments express incompleteness of the method, class or program.
+  
+  \begin{displayquote}
+  	\textit{``/TODO no methods yet for getClassname''}
+  	
+  	\vspace{1mm}
+  	
+  	\textit{``//TODO no method for newInstance using a reverse-classloader''}
 
-  \item \textbf{Requirement debt:} Requirement debt comments express the fact that incompleteness of the method, class or program.
-
-  \item \textbf{Test debt:} Test debt comments are the ones that express the need for implementation or improvement of the current tests.
+  	\vspace{1mm}
+  	
+  	\textit{``TODO: The copy function is not yet * completely implemented - so we will  * have some exceptions here and there.*/''}  
+  	
+  \end{displayquote}
+  \vspace{1mm}  
+  
+  	The last example shows a comment that could be considered as having more than one type of debt. (i.e., requirement debt and defect debt), but as mentioned in the classification approach, we choose to maintain one type only for each comment. 
+  	
+  	In our understanding, the defect debt expressed in the comment would not exist if the requirement debt did not exists. Therefore, the main debt in this comment is a requirement debt (i.e., incomplete implementation of the copy function). 
+  	
+  	One more reason that we give a comment only one classification type is that there is no way to tell if the other requirement debts are not causing an unexpected behavior, except in the case that the author of the comment express is. 
+  
+  \vspace{1mm}
+  \item \textbf{Self-admitted Test debt:} Test debt comments are the ones that express the need for implementation or improvement of the current tests. As shown in the examples below, test debt comments are very straight forward in their meaning. 
+  
+  \begin{displayquote}
+  	\textit{``// TODO - need a lot more tests''}
+  	
+  	\vspace{1mm}
+  	
+  	\textit{``//TODO enable some proper tests!!''}
+  \end{displayquote}
+  \vspace{1mm}  
+    
 \end{itemize}
+
+After classifying the comments, we notice that not all of the types mentioned in \cite{Alves2014MTD} could be found. We argue that some of the types like People Debt or Infrastructure Debt is really less probable to appear in source code comments, whereas other types as Build Debt could not be found because we are examining just comments found in Java classes, therefore not taking in consideration build scripts that can be written in other languages (e.g., Maven and Ant use xml files as build scripts). 
+
+Other than that, types like Test Automation debt and Test Debt were considered as the same type in our study due to te resemblance of their purpose. In a similar way, Process Debt, Service Debt, Code Debt and Architecture Debt were considered as Self-admitted design debt in our study.
+
+\conclusionbox{We found 5 different types of self-admitted technical debt in the comments of the studied projects. Design Debt, Defect Debt, Documentation Debt, Requirement Debt and Test Debt. Althoug there are comments that can have more the one type of debt, we found that there is a main type of debt that the comment can be classified to. }
 
 % Table \ref{tab:technical_debt_project} shows the total amount of self-admitted technical debt found in the analyzed projects. For example, in Apache Ant out of the 4,140 analyzed comments 134 turnout to be classified as self-admitted technical debt, which represents 3.2\% of the comments of the analyzed comments. 
 
@@ -80,21 +130,21 @@ During the classification we notice that some comments can be classified in more
 
 % In defect debt comments the author/s states that that particular piece of code do not have the expected behavior. For documentation debt comments the author/s wrote that there is not documentation supporting that part of the program. Requirement debt comments express the fact that incompleteness of the method, class or program. Finally, test debt comments are the ones that express the need for implementation or improvement of the current tests. We show examples of defect, documentation, requirement and test debt in Tables \ref{tab:defect_debt_detail}, \ref{tab:documentation_debt_detail}, \ref{tab:requeriment_debt_detail}, \ref{tab:test_debt_detail} respectively.   
 
-\begin{table*}[!hbt]
-      \begin{center}
-            \caption{Self-admitted technical debt per project}
-            \label{tab:technical_debt_project}
-            \begin{tabular}{l| c c c }
-            \toprule
-            \textbf{Project}      & \textbf{Analyzed comments}     & \textbf{Self-admitted TD comments} & \textbf{Percentage} \\ \midrule 
-              Apache Ant          & 4,140                          & 134                                & 3.2  \\                                   
-              Apache Jmeter       & 8,163                          & 375                                & 4.6  \\                                   
-              ArgoUML             & 9,788                          & 1,653                              & 16.8 \\                                   
-              Columba             & 6,569                          & 295                                & 4.4 \\                                   
-              JFreeChart          & 4,433                          & 219                                & 4.9  \\ \bottomrule
-            \end{tabular}
-      \end{center}
-\end{table*}
+%\begin{table*}[!hbt]
+%      \begin{center}
+%            \caption{Self-admitted technical debt per project}
+%            \label{tab:technical_debt_project}
+%            \begin{tabular}{l| c c c }
+%            \toprule
+%            \textbf{Project}      & \textbf{Analyzed comments}     & \textbf{Self-admitted TD comments} & \textbf{Percentage} \\ \midrule 
+%              Apache Ant          & 4,140                          & 134                                & 3.2  \\                                   
+%              Apache Jmeter       & 8,163                          & 375                                & 4.6  \\                                   
+%              ArgoUML             & 9,788                          & 1,653                              & 16.8 \\                                   
+%              Columba             & 6,569                          & 295                                & 4.4 \\                                   
+%              JFreeChart          & 4,433                          & 219                                & 4.9  \\ \bottomrule
+%            \end{tabular}
+%      \end{center}
+%\end{table*}
 
 % \begin{table}[!hbt]
 %       \begin{center}
@@ -174,7 +224,7 @@ During the classification we notice that some comments can be classified in more
 %       \end{center}
 % \end{table}
 
-Once that the comments were classified we quantify and analyze the distribution of the self-admitted technical debts. 
+Second, we quantify and analyze the distribution of the self-admitted technical debt in the comments. Figure \todo{add figure} shows the percentage of each type of self-admitted technical debt.
 
 
 the number of requirement debt shows the maturity of the project by the perspective of the developers. a lot of opportunities to improve features of the project can mean that the project still in a immature phase. or that there still a lot of room to improvement. it means that is not in the more stable state that it can be. or that the authors were expecting. when the project is new there is a lot of thing that the developers still want to develop. in more stable projects the predominance is design debits not requirements (implementation). the number of features that one product offers can play a role in the implementation debt as well, as the role of the application is more complex one will find more things to implement as well. like argo has many features, and many users, this can provide the developers with the necessary direction to evolve the project . whereas columba has just a few developers so there are a lot of things that need to be implemented as well, the number of users can put this number up or down , a lot of users can force the developers to better implement the software. tell about the the difference between very large softwares against very specialist systems. 
@@ -186,98 +236,98 @@ the number of requirement debt shows the maturity of the project by the perspect
 % The quantification of each of these types of self-admitted technical debt.
 % Making the dataset used in this study available to the software engineering community.  
 
-\begin{table*}[!hbt]
-      \begin{center}
-            \caption{Self-Admitted Technical Debt distribution}
-            \label{tab:td_distribution}
-            \begin{tabular}{l| c c c c c}
-            \toprule
-            \textbf{Project}   & \textbf{\# Defect comments}  & \textbf{\# Design comments} & \textbf{\# Documentation comments} & \textbf{\# Implementation comments} & \textbf{\# Test comments}\\ \midrule 
-             Apache Ant          &  13& 95& 0& 16& 16\\
-             Apache Jmeter       &  22& 316& 3& 22& 12\\
-             ArgoUML             &  127& 801& 30& 651& 44\\
-             Columba             &  13& 126& 16& & 6\\
-             JFreeChart          &  9& 184& 0& 25& 1\\ \bottomrule                                             
-            \end{tabular}
-      \end{center}
-\end{table*}
-
- \begin{table*}[!hbt]
-       \begin{center}
-             \caption{Apache Ant Self-Admitted Technical Debt distribution}
-             \label{tab:ant_td_details}
-             \begin{tabular}{l| c c }
-             \toprule
-             \textbf{Type}   & \textbf{\# of comments}     & \textbf{Percentage}  \\ \midrule 
-              Defect          & 13             & 9.70\\     
-              Design          & 95             & 70.89\\    
-              Documentation   & 0              & 0.00\\      
-              Implementation  & 16             & 11.94\\    
-              Test            & 10             & 7.46\\  \bottomrule                                   
-             \end{tabular}
-       \end{center}
- \end{table*}
-
- \begin{table*}[!hbt]
-       \begin{center}
-             \caption{Apache Jmeter Self-Admitted Technical Debt distribution}
-             \label{tab:jmeter_td_details}
-             \begin{tabular}{l| c c }
-             \toprule
-             \textbf{Type}    & \textbf{\# of comments}     & \textbf{Percentage}  \\ \midrule 
-              Defect          & 22              & 5.86\\     
-              Design          & 316             & 84.26\\    
-              Documentation   & 3               & 0.8\\      
-              Implementation  & 22              & 5.86\\    
-              Test            & 12              & 3.2\\  \bottomrule                                   
-             \end{tabular}
-       \end{center}
- \end{table*}
-
- \begin{table*}[!hbt]
-       \begin{center}
-             \caption{ArgoUml Self-Admitted Technical Debt distribution}
-             \label{tab:argo_td_details}
-             \begin{tabular}{l| c c }
-             \toprule
-             \textbf{Type}   & \textbf{\# of comments}     & \textbf{Percentage}  \\ \midrule 
-              Defect          &  127            &7.68 \\     
-              Design          &  801            &48.45 \\    
-              Documentation   &  30             &1.81 \\      
-              Implementation  &  651            &39.38 \\    
-              Test            &  44             &2.66 \\  \bottomrule                                   
-             \end{tabular}
-       \end{center}
- \end{table*}
-
- \begin{table*}[!hbt]
-       \begin{center}
-             \caption{JFreechart Self-Admitted Technical Debt distribution}
-             \label{tab:jfreechart_td_details}
-             \begin{tabular}{l| c c }
-             \toprule
-             \textbf{Type}   & \textbf{\# of comments}     & \textbf{Percentage}  \\ \midrule 
-              Defect          &  9              &4.10 \\     
-              Design          &  184            &84.01 \\    
-              Documentation   &  0              & 0.0\\      
-              Implementation  &  25             & 11.41\\    
-              Test            &  1              & 0.45\\  \bottomrule                                   
-             \end{tabular}
-       \end{center}
- \end{table*}
-
-\begin{table*}[!hbt]
-      \begin{center}
-            \caption{Columba Self-Admitted Technical Debt distribution}
-            \label{tab:jfreechart_td_details}
-            \begin{tabular}{l| c c }
-            \toprule
-            \textbf{Type}   & \textbf{\# of comments}     & \textbf{Percentage}  \\ \midrule 
-             Defect          &  13              & 4.10  \\     
-             Design          &  126             & 84.01 \\    
-             Documentation   &  16              & 0.0  \\      
-             Implementation  &  134             & 11.41\\    
-             Test            &  6               & 0.45 \\  \bottomrule                                   
-            \end{tabular}
-      \end{center}
-\end{table*}
+%\begin{table*}[!hbt]
+%      \begin{center}
+%            \caption{Self-Admitted Technical Debt distribution}
+%            \label{tab:td_distribution}
+%            \begin{tabular}{l| c c c c c}
+%            	\toprule
+%            	\textbf{Project} & \textbf{\# Defect comments} & \textbf{\# Design comments} & \textbf{\# Documentation comments} & \textbf{\# Implementation comments} & \textbf{\# Test comments} \\ \midrule
+%            	Apache Ant       & 13                          & 95                          & 0                                  & 16                                  & 16                        \\
+%            	Apache Jmeter    & 22                          & 316                         & 3                                  & 22                                  & 12                        \\
+%            	ArgoUML          & 127                         & 801                         & 30                                 & 651                                 & 44                        \\
+%            	Columba          & 13                          & 126                         & 16                                 &                                     & 6                         \\
+%            	JFreeChart       & 9                           & 184                         & 0                                  & 25                                  & 1                         \\ \bottomrule
+%            \end{tabular}
+%      \end{center}
+%\end{table*}
+%
+% \begin{table*}[!hbt]
+%       \begin{center}
+%             \caption{Apache Ant Self-Admitted Technical Debt distribution}
+%             \label{tab:ant_td_details}
+%             \begin{tabular}{l| c c }
+%             	\toprule
+%             	\textbf{Type}  & \textbf{\# of comments} & \textbf{Percentage} \\ \midrule
+%             	Defect         & 13                      & 9.70                \\
+%             	Design         & 95                      & 70.89               \\
+%             	Documentation  & 0                       & 0.00                \\
+%             	Implementation & 16                      & 11.94               \\
+%             	Test           & 10                      & 7.46                \\ \bottomrule
+%             \end{tabular}
+%       \end{center}
+% \end{table*}
+%
+% \begin{table*}[!hbt]
+%       \begin{center}
+%             \caption{Apache Jmeter Self-Admitted Technical Debt distribution}
+%             \label{tab:jmeter_td_details}
+%             \begin{tabular}{l| c c }
+%             	\toprule
+%             	\textbf{Type}  & \textbf{\# of comments} & \textbf{Percentage} \\ \midrule
+%             	Defect         & 22                      & 5.86                \\
+%             	Design         & 316                     & 84.26               \\
+%             	Documentation  & 3                       & 0.8                 \\
+%             	Implementation & 22                      & 5.86                \\
+%             	Test           & 12                      & 3.2                 \\ \bottomrule
+%             \end{tabular}
+%       \end{center}
+% \end{table*}
+%
+% \begin{table*}[!hbt]
+%       \begin{center}
+%             \caption{ArgoUml Self-Admitted Technical Debt distribution}
+%             \label{tab:argo_td_details}
+%             \begin{tabular}{l| c c }
+%             	\toprule
+%             	\textbf{Type}  & \textbf{\# of comments} & \textbf{Percentage} \\ \midrule
+%             	Defect         & 127                     & 7.68                \\
+%             	Design         & 801                     & 48.45               \\
+%             	Documentation  & 30                      & 1.81                \\
+%             	Implementation & 651                     & 39.38               \\
+%             	Test           & 44                      & 2.66                \\ \bottomrule
+%             \end{tabular}
+%       \end{center}
+% \end{table*}
+%
+% \begin{table*}[!hbt]
+%       \begin{center}
+%             \caption{JFreechart Self-Admitted Technical Debt distribution}
+%             \label{tab:jfreechart_td_details}
+%             \begin{tabular}{l| c c }
+%             	\toprule
+%             	\textbf{Type}  & \textbf{\# of comments} & \textbf{Percentage} \\ \midrule
+%             	Defect         & 9                       & 4.10                \\
+%             	Design         & 184                     & 84.01               \\
+%             	Documentation  & 0                       & 0.0                 \\
+%             	Implementation & 25                      & 11.41               \\
+%             	Test           & 1                       & 0.45                \\ \bottomrule
+%             \end{tabular}
+%       \end{center}
+% \end{table*}
+%
+%\begin{table*}[!hbt]
+%      \begin{center}
+%            \caption{Columba Self-Admitted Technical Debt distribution}
+%            \label{tab:jfreechart_td_details}
+%            \begin{tabular}{l| c c }
+%            	\toprule
+%            	\textbf{Type}  & \textbf{\# of comments} & \textbf{Percentage} \\ \midrule
+%            	Defect         & 13                      & 4.10                \\
+%            	Design         & 126                     & 84.01               \\
+%            	Documentation  & 16                      & 0.0                 \\
+%            	Implementation & 134                     & 11.41               \\
+%            	Test           & 6                       & 0.45                \\ \bottomrule
+%            \end{tabular}
+%      \end{center}
+%\end{table*}
