@@ -21,11 +21,8 @@
 \usepackage[normalem]{ulem}
 \usepackage{csquotes}
 
-
-
 \newcommand{\everton}[1]{\textcolor{yellow}{{\it [Everton: #1]}}}
 \newcommand{\todo}[1]{\colorbox{yellow}{\textbf{[#1]}}}
-
 
 \newcommand{\conclusionbox}[1]{%
 	\vspace{2mm}
@@ -53,7 +50,10 @@ Montreal, Canada\\
 
 \maketitle
 
-\begin{abstract}
+\begin{abstract} Technical Debt is a term that has been used to express non optimal solutions during the development of software projects. These non optimal solutions are often shortcuts that allows the project to move faster in the short term at the cost of increased maintenance at future. As a research area, technical debt is getting more attention and several ways to manage and couple with debt are being studied. One of them are source code comments where developers admit that the implementation they are doing is not the best solution. We call these comments self-admitted technical debt. 
+	
+This paper explore the widespread nature of technical debt and its types providing a taxonomy of self-admitted technical debt. First, we propose four simple heuristics to eliminate comments that are not likely to contain technical debt. Second, we read trough more than 33,093 comments, and we found that self-admitted technical debt can be classified in design debt, defect debt, documentation debt, requirement debt or test debt. The  most common type is design debt representing 42\% ~ 84\% of the comments classified as self-admitted technical debt. We also find that of all classified comments 7.42\% represent some type of technical debt. Third, we make the classified dataset available to the community as a way to encourage future research and the evolution of the technical debt landscape. 
+	
 \end{abstract}
 
 \IEEEpeerreviewmaketitle
