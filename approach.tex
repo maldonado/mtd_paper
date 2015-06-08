@@ -1,20 +1,18 @@
-% \begin{figure*}[thb!]
-%   \caption{Approach overview}
-%   \centering
-%   \label{fig:approach}
-%   \includegraphics[width=1\textwidth]{figures/Approach2}
-% \end{figure*}
+\begin{figure*}[thb!]
+  \caption{Approach overview}
+  \centering
+  \label{fig:approach}
+  \includegraphics[width=1\textwidth]{figures/Approach}
+\end{figure*}
 
-\todo{create figure of approach}
-The main goal of our study is to identify and quantify the different types of self-admitted technical debt found in source code comments. Figure I shows an overview of our approach. The following subsections detail each step of our approach.
+The main goal of our study is to identify and quantify the different types of self-admitted technical debt found in source code comments. Figure \ref{fig:approach} shows an overview of our approach, and the following subsections detail each step of it.
 
 \subsection{Data Extraction} % (fold)
 \label{sub:data_extraction}
 
-To perform our study, we obtain the source of four open source projects, namely Apache Ant, Apache Jmeter, ArgoUML and JFreeChart. We chose the aforementioned projects, since they belong to different domains, and vary in size (e.g., LOC), and in the number of contributors.
+To perform our study, we obtain the source of four open source projects, namely Apache Ant, Apache Jmeter, ArgoUML, Columba and JFreeChart. We chose the aforementioned projects, since they belong to different domains, and vary in size (e.g., SLOC), and in the number of contributors.
 
-Table \ref{tab:project_details} provides statistics about each of the projects used in our study. In total, we obtained more than 132,501 comments, found in 6,330 files. We also include the release used, the number of classes, and the total lines of code (LOC). In our study, we only use the Java files to calculate the LOC. It is important to notice that the number of comments shown for each project does not represent the number of commented lines, but rather the number of individual line, block, and Javadoc comments.
-/todo{complement details table with more information about the project, put references from where I took the number of developers}
+Table \ref{tab:project_details} provides statistics about each one of the projects used in our study. We include the release used, the number of classes, the total source lines of code (SLOC), the total extracted comments and the number of contributors. A source line of code does is line containing at least one character there is not blank spaces or commented text. In our study, we only use the Java files to calculate the SLOC, and to do so, we use the tool SLOCCount \cite{wheeler2004:home}. The number of contributors was extracted from OpenHub, an on-line community and public directory that offers analytics, search services and tools for free and open source software \cite{Openhub:home}. It is important to notice that the number of comments shown for each project does not represent the number of commented lines, but rather the number of individual line, block, and Javadoc comments. In total, we obtained more than 166,756 comments, found in 8,041 Java classes.
 % subsection data_extraction (end)
  
 \subsection{Parse Source Code} % (fold)
@@ -25,17 +23,17 @@ After obtaining the source code of all projects, we extract the comments from th
 \subsection{Filter Comments} % (fold)
 \label{sub:filter_comments}
 
-Source code comments can be used for different purposes in a project like giving context, as part of documentation, to express thoughts, opinions and authorship, and in some cases, to remove source code from the program. Comments are used freely for developers and with few formalities, if any at all. This informal environment allows developers to bring to light opinions, insights and even confessions (i.e, a poorly implemented piece of code). 
+Source code comments can be used for different purposes in a project like giving context, as part of documentation, to express thoughts, opinions and authorship, and in some cases, to remove source code from the program. Comments are used freely for developers and with few formalities, if any at all. This informal environment allows developers to bring to light opinions, insights and even confessions (i.e, self-admitted technical debt). 
 
-As shown in a previous study by Potdar \textit{et al.} \cite{Potdar2014ICSME}, part of these comments can be identified as technical debt. However, these comments are not the majority in a project. To tackle this problem, we develop and apply 4 filtering heuristics to narrow down the comments eliminating the ones that are less likely to be classified as technical debt.
+As shown in a previous study by Potdar \textit{et al.} \cite{Potdar2014ICSME}, part of these comments can be identified as self-admitted technical debt. However, these comments are not the majority in a project. To address this problem, we develop and apply 4 filtering heuristics to narrow down the comments eliminating the ones that are less likely to be classified as self-admitted technical debt.
 
 We apply first a heuristic to remove license comments. When license comments are added to the Java files in a project they are generally placed in the first lines of the file, before the class declaration. Based on this knowledge we created a heuristic that eliminates comments that are placed before the class declaration. 
 
-Second, a heuristic to merge multiple line comments. Some times developers make long comments, using multiple single-line comments instead of a Block comment. Treating every single line of a long comment as an individual comment causes us to miss important context details that could be recovered by treating all single-line comments as a single block comment. Therefore, we create this heuristic that searches for consecutive single-line comments and groups them.
+Second, we use a heuristic to merge multiple line comments. Some times developers make long comments, using multiple single-line comments instead of a Block comment. Treating every single line of a long comment as an individual comment causes us to miss important context details that could be recovered by treating all single-line comments as a single block comment. Therefore, we create this heuristic that searches for consecutive single-line comments and groups them.
 
 Third, a heuristic to remove commented source code. Commented source code can be found for several different reasons. One of the possibilities could be that the code is not being currently used, or if the particular piece of code is used to debug the program. Since commented code does not have Self-admitted Design Technical Debt, we remove commented source code using a regular expressions that captures typical Java code structures.
 
-Fourth, a heuristic to remove Javadoc comments. The Javadoc comments contain information about the purpose and use of methods and classes. That said, Javadoc comments rarely mention Self-admitted Design Technical Debt. Therefore, we create a heuristic that removes Javadoc comments. To mitigate the risk of eliminating some correct cases, we added one exception - if the comment contains one of the task-reserved words (e.g. “todo”, “fixme”, or “xxx”) we keep that Javadoc comment.
+Fourth, a heuristic to remove Javadoc comments. The Javadoc comments contain information about the purpose and use of methods and classes. That said, we found that Javadoc comments rarely mention Self-admitted Design Technical Debt. Therefore, we create a heuristic that removes Javadoc comments. To mitigate the risk of eliminating some correct cases, we added one exception - if the comment contains one of the task-reserved words (e.g. “todo”, “fixme”, or “xxx”) we keep that Javadoc comment. 
 
 The steps mentioned above significantly reduced the number of comments in our dataset and helped us focus on the most applicable and insightful comments. For example, in the Apache Ant project, applying the above steps helped reduce the number of comments from 21,587 to 4,140 comments.
 
@@ -44,8 +42,7 @@ The steps mentioned above significantly reduced the number of comments in our da
 \subsection{Manual Classification} % (fold)
 \label{sub:manual_classification}
 
-To manually classify the comments we first developed a Java based tool that show one comment at time and gives a list of possible classifications that will be assigned to the comment. Using this tool we were able to classify more than \todo{add number of classified comments} comments. 
-% into one of following categories of technical debt: Documentation Debt, Design Debt, Defect Debt, Implementation Debt or Text  Debt.  
+To manually classify the comments we first developed a Java based tool that show one comment at time and gives a list of possible classifications \cite{Alves2014MTD} that will be assigned to the comment. Using this tool we were able to classify more than 33,093 comments. 
 
 % subsection manual_classification (end)
 
@@ -53,14 +50,14 @@ To manually classify the comments we first developed a Java based tool that show
       \begin{center}
             \caption{Project Details}
             \label{tab:project_details}
-            \begin{tabular}{l| c c c c }
+            \begin{tabular}{l| c c c c c }
             \toprule
-            \textbf{Project}   & \textbf{Release}          & \textbf{LOC}     & \textbf{\# of comments} & \textbf{\# of contributors} \\ \midrule 
-              Apache Ant       & 1.7.0                     & 115,881          & 21,587                                & 70  \\                                   
-              Apache Jmeter    & 2.10                      & 81,307           & 20,084                                & 32  \\                                   
-              ArgoUML          & 0.34                      & 176,839          & 67,716                                & 87  \\                                   
-              Columba          & 1.4                       & 100,200          & 33,895                                & 9   \\                                   
-              JFreeChart       & 1.0.19                    & 132,296          & 23,474                                & 18  \\ \bottomrule
+            \textbf{Project}   & \textbf{Release}  & \textbf{\# of classes}   & \textbf{SLOC}    & \textbf{\# of comments}  & \textbf{\# of contributors} \\ \midrule 
+              Apache Ant       & 1.7.0             &  1,475                   & 115,881          & 21,587                   & 70  \\                                   
+              Apache Jmeter    & 2.10              &  1,181                   & 81,307           & 20,084                   & 32  \\                                   
+              ArgoUML          & 0.34              &  2,609                   & 176,839          & 67,716                   & 87  \\                                   
+              Columba          & 1.4               &  1,711                   & 100,200          & 33,895                   & 9   \\                                   
+              JFreeChart       & 1.0.19            &  1,065                   & 132,296          & 23,474                   & 18  \\ \bottomrule
             \end{tabular}
       \end{center}
 \end{table*}
