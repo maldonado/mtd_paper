@@ -1,33 +1,15 @@
 Software development imposes several challenges as short deadlines, complex solutions and low tolerance with errors in an ever changing environment. Often there is much more that needs to be done than time to accomplish it. Developers are the ones who plays the main role in this scenario, and usually is up to them to couple with such pressure when implementing their tasks. In this context, some decisions are made to allow the short term development of the project at the cost of its increased maintenance effort in the future. This phenomena is know as Technical Debt \cite{Cunningham1992}. 
 
-The term Technical Debt has became more popular among software engineer practitioners due its communication potential \cite{Spinola2013MTD}. It is a comprehensible metaphor for managers in need to understand what before was explained trough heavy technical language. With the adoption of the metaphor more specific ways to communicate technical debt during the life cycle of a software project was developed (e.g., design debt, documentation debt, test debt) \cite{Alves2014MTD}. Now, for the software research community, is given the challenge to understand the characteristics of each different type of technical debt, advancing the state of the art in the detection and management of technical debt.
+The term Technical Debt has became more popular among software engineer practitioners due its communication potential \cite{Spinola2013MTD}. It is a comprehensible metaphor for managers in need to understand what before was explained trough heavy technical language. With the adoption of the metaphor more specific ways to communicate technical debt during the life cycle of a software project was developed (i.e., technical debt types) \cite{Alves2014MTD}\cite{Kruchten2012}. For the software research community the challenge is to better understand the characteristics of each different type of technical debt advancing the state of the art in detection and management of technical debt.
 
-Despite the efforts addressing this problem there is one relatively unexplored aspect of technical debt that is the technical debt contained in source code comments. Sometimes, the developers knowing that the current implementation is not the optimal, write comments alerting the situation. This kind of technical debt is called self-admitted technical debt. 
+ % In the software engineering community the topic is getting more attention and studies addressing the identification and management of technical debt. \todo{citations here}
 
-Potdar \textit{et al.} \cite{Potdar2014ICSME} developed an approach to identify these comments, however their approach does not take in consideration the  in previous work.  
+Despite the efforts addressing this problem there is still one relatively unexplored aspect of technical debt that is technical debt contained in source code comments. Sometimes, developers knowing that the current implementation is not optimal, write comments alerting the inadequacy of the solution. This kind of technical debt is called self-admitted technical debt. 
 
-and technical debt types  i.\cite{Kruchten2012}.
+Potdar \textit{et al.} \cite{Potdar2014ICSME} developed an approach to identify these comments, trough manual inspection they were able to mine 62 patterns that effectively identifies self-admitted technical debt. However, their approach does not take in consideration the different types of technical debt, and knowing how to extract specific types of self-technical debt is important because the treatment is different from one another, and accordingly with the project needs, solving one type of self-admitted technical debt may be priority.
 
+Our work explore the characteristics of these specific types. We extract source code comments from 5 open source projects from different domains, namely Apache Ant, Apache Jmeter, ArgoUml, Columba and JFreeChart. In total we collected more than 166,756 comments. Then we applied a set of 4 simple filters to remove comments that are not likely to contain self-admitted technical debt (e.g., license comments, commented source code, Javadoc comments). Finally, the first author manually analyzed the remainder comments classifying them into different types of technical debt. 
 
- In the software engineering community the topic is getting more attention and studies addressing the identification and management of technical debt. \todo{citations here}
+When classifying the comments we found 5 types of self-admitted technical debt which are: design debt, defect debt, documentation debt, requirement debt and test debt. Analyzing the distribution of the comments we found that the most common type is design debt ranging from 42\% to 84\% of all classified comments. With this study we complement the previous work in self-admitted technical debt by analyzing and quantifying the different types of technical debt. We contribute with a rich dataset of self-admitted technical making the data used in this work publicly available. To the best of our knowledge, there is not similar data available and we believe that the dataset will encourage future research in the area of self-admitted technical providing the foundation to more advanced techniques as Natural Language Processing for example. 
 
-In this context, Potdar \textit{et al.} \cite{Potdar2014ICSME} developed an approach to identify technical debt contained in the source code comments. These comments containing technical debt was called  self-admitted technical debt. However, the approach to identify these comments does not take in consideration the 
-
- the author developed a approach to i 
-The topic have a increasing interest in the software engineering research community also, and a great deal of attention is given to    
-
-
-ople has done to address this problem. 
-3- what are the weakness in this solution. 
-4- how do our work fit in in this context
-5- the results and contributions 
-6- the organization of the paper. 
-
-take a good paper and use as a inspiration to write. 
-
-
-contributions with this paper:
-
-The definition of the different types of self-admitted technical debt found in source code comments.
-The quantification of each of these types of self-admitted technical debt.
-Making the dataset used in this study available to the software engineering community.  
+The rest of the paper is organized as follows. Section \ref{sec:related_work} presents related work. We describe our approach and how we setup our case study in Section \ref{sec:approach}. Section \ref{sec:results} shows our case study results. The threats to validity are presented in Section \ref{sec:threats_to_validity} and in Section \ref{sec:conclusion} we present our conclusions and future work. 
