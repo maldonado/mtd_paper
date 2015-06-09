@@ -15,8 +15,7 @@ During the classification we notice that some comments can be classified in more
 \noindent\textbf{Results:} First, we present the types of self-admitted technical debt that we could find in the source code comments that we classified. 
 
 \begin{itemize}
-  \item \textbf{Self-admitted Design debt:} 
-  These comments indicates that there is a problem with the design of the code. They can be comments about misplaced code, lack of abstraction, long methods, poor implementation, workarounds and temporary solution were classified in this type. Lets consider the following comments:
+  \item \textbf{Self-admitted Design debt:} These comments indicates that there is a problem with the design of the code. They can be comments about misplaced code, lack of abstraction, long methods, poor implementation, workarounds and temporary solution were classified in this type. Lets consider the following comments:
   
   \vspace{1mm}
   \begin{displayquote}
@@ -226,6 +225,8 @@ Other than that, types like Test Automation debt and Test Debt were considered a
 
 Second, we quantify and analyze the distribution of the self-admitted technical debt in the comments. Figure \todo{add figure} shows the percentage of each type of self-admitted technical debt.
 
+\todo{work in second part of the question}
+
 
 the number of requirement debt shows the maturity of the project by the perspective of the developers. a lot of opportunities to improve features of the project can mean that the project still in a immature phase. or that there still a lot of room to improvement. it means that is not in the more stable state that it can be. or that the authors were expecting. when the project is new there is a lot of thing that the developers still want to develop. in more stable projects the predominance is design debits not requirements (implementation). the number of features that one product offers can play a role in the implementation debt as well, as the role of the application is more complex one will find more things to implement as well. like argo has many features, and many users, this can provide the developers with the necessary direction to evolve the project . whereas columba has just a few developers so there are a lot of things that need to be implemented as well, the number of users can put this number up or down , a lot of users can force the developers to better implement the software. tell about the the difference between very large softwares against very specialist systems. 
 
@@ -252,82 +253,82 @@ the number of requirement debt shows the maturity of the project by the perspect
 %      \end{center}
 %\end{table*}
 %
- \begin{table*}[!hbt]
-       \begin{center}
-             \caption{Apache Ant Self-Admitted Technical Debt distribution}
-             \label{tab:ant_td_details}
-             \begin{tabular}{l| c c }
-             	\toprule
-             	\textbf{Type}  & \textbf{\# of comments} & \textbf{Percentage} \\ \midrule
-             	Defect         & 13                      & 9.70                \\
-             	Design         & 95                      & 70.89               \\
-             	Documentation  & 0                       & 0.00                \\
-             	Implementation & 16                      & 11.94               \\
-             	Test           & 10                      & 7.46                \\ \bottomrule
-             \end{tabular}
-       \end{center}
- \end{table*}
-
- \begin{table*}[!hbt]
-       \begin{center}
-             \caption{Apache Jmeter Self-Admitted Technical Debt distribution}
-             \label{tab:jmeter_td_details}
-             \begin{tabular}{l| c c }
-             	\toprule
-             	\textbf{Type}  & \textbf{\# of comments} & \textbf{Percentage} \\ \midrule
-             	Defect         & 22                      & 5.86                \\
-             	Design         & 316                     & 84.26               \\
-             	Documentation  & 3                       & 0.8                 \\
-             	Implementation & 22                      & 5.86                \\
-             	Test           & 12                      & 3.2                 \\ \bottomrule
-             \end{tabular}
-       \end{center}
- \end{table*}
-
- \begin{table*}[!hbt]
-       \begin{center}
-             \caption{ArgoUml Self-Admitted Technical Debt distribution}
-             \label{tab:argo_td_details}
-             \begin{tabular}{l| c c }
-             	\toprule
-             	\textbf{Type}  & \textbf{\# of comments} & \textbf{Percentage} \\ \midrule
-             	Defect         & 127                     & 7.68                \\
-             	Design         & 801                     & 48.45               \\
-             	Documentation  & 30                      & 1.81                \\
-             	Implementation & 651                     & 39.38               \\
-             	Test           & 44                      & 2.66                \\ \bottomrule
-             \end{tabular}
-       \end{center}
- \end{table*}
-
- \begin{table*}[!hbt]
-       \begin{center}
-             \caption{JFreechart Self-Admitted Technical Debt distribution}
-             \label{tab:jfreechart_td_details}
-             \begin{tabular}{l| c c }
-             	\toprule
-             	\textbf{Type}  & \textbf{\# of comments} & \textbf{Percentage} \\ \midrule
-             	Defect         & 9                       & 4.10                \\
-             	Design         & 184                     & 84.01               \\
-             	Documentation  & 0                       & 0.0                 \\
-             	Implementation & 25                      & 11.41               \\
-             	Test           & 1                       & 0.45                \\ \bottomrule
-             \end{tabular}
-       \end{center}
- \end{table*}
-
-\begin{table*}[!hbt]
-      \begin{center}
-            \caption{Columba Self-Admitted Technical Debt distribution}
-            \label{tab:jfreechart_td_details}
-            \begin{tabular}{l| c c }
-            	\toprule
-            	\textbf{Type}  & \textbf{\# of comments} & \textbf{Percentage} \\ \midrule
-            	Defect         & 13                      & 4.40                \\
-            	Design         & 126                     & 42.71               \\
-            	Documentation  & 16                      & 5.42                 \\
-            	Implementation & 134                     & 45.42               \\
-            	Test           & 6                       & 2.03                \\ \bottomrule
-            \end{tabular}
-      \end{center}
-\end{table*}
+% \begin{table*}[!hbt]
+%       \begin{center}
+%             \caption{Apache Ant Self-Admitted Technical Debt distribution}
+%             \label{tab:ant_td_details}
+%             \begin{tabular}{l| c c }
+%             	\toprule
+%             	\textbf{Type}  & \textbf{\# of comments} & \textbf{Percentage} \\ \midrule
+%             	Defect         & 13                      & 9.70                \\
+%             	Design         & 95                      & 70.89               \\
+%             	Documentation  & 0                       & 0.00                \\
+%             	Implementation & 16                      & 11.94               \\
+%             	Test           & 10                      & 7.46                \\ \bottomrule
+%             \end{tabular}
+%       \end{center}
+% \end{table*}
+%
+% \begin{table*}[!hbt]
+%       \begin{center}
+%             \caption{Apache Jmeter Self-Admitted Technical Debt distribution}
+%             \label{tab:jmeter_td_details}
+%             \begin{tabular}{l| c c }
+%             	\toprule
+%             	\textbf{Type}  & \textbf{\# of comments} & \textbf{Percentage} \\ \midrule
+%             	Defect         & 22                      & 5.86                \\
+%             	Design         & 316                     & 84.26               \\
+%             	Documentation  & 3                       & 0.8                 \\
+%             	Implementation & 22                      & 5.86                \\
+%             	Test           & 12                      & 3.2                 \\ \bottomrule
+%             \end{tabular}
+%       \end{center}
+% \end{table*}
+%
+% \begin{table*}[!hbt]
+%       \begin{center}
+%             \caption{ArgoUml Self-Admitted Technical Debt distribution}
+%             \label{tab:argo_td_details}
+%             \begin{tabular}{l| c c }
+%             	\toprule
+%             	\textbf{Type}  & \textbf{\# of comments} & \textbf{Percentage} \\ \midrule
+%             	Defect         & 127                     & 7.68                \\
+%             	Design         & 801                     & 48.45               \\
+%             	Documentation  & 30                      & 1.81                \\
+%             	Implementation & 651                     & 39.38               \\
+%             	Test           & 44                      & 2.66                \\ \bottomrule
+%             \end{tabular}
+%       \end{center}
+% \end{table*}
+%
+% \begin{table*}[!hbt]
+%       \begin{center}
+%             \caption{JFreechart Self-Admitted Technical Debt distribution}
+%             \label{tab:jfreechart_td_details}
+%             \begin{tabular}{l| c c }
+%             	\toprule
+%             	\textbf{Type}  & \textbf{\# of comments} & \textbf{Percentage} \\ \midrule
+%             	Defect         & 9                       & 4.10                \\
+%             	Design         & 184                     & 84.01               \\
+%             	Documentation  & 0                       & 0.0                 \\
+%             	Implementation & 25                      & 11.41               \\
+%             	Test           & 1                       & 0.45                \\ \bottomrule
+%             \end{tabular}
+%       \end{center}
+% \end{table*}
+%
+%\begin{table*}[!hbt]
+%      \begin{center}
+%            \caption{Columba Self-Admitted Technical Debt distribution}
+%            \label{tab:jfreechart_td_details}
+%            \begin{tabular}{l| c c }
+%            	\toprule
+%            	\textbf{Type}  & \textbf{\# of comments} & \textbf{Percentage} \\ \midrule
+%            	Defect         & 13                      & 4.40                \\
+%            	Design         & 126                     & 42.71               \\
+%            	Documentation  & 16                      & 5.42                 \\
+%            	Implementation & 134                     & 45.42               \\
+%            	Test           & 6                       & 2.03                \\ \bottomrule
+%            \end{tabular}
+%      \end{center}
+%\end{table*}
