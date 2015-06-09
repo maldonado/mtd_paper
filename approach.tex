@@ -5,6 +5,22 @@
   \includegraphics[width=1\textwidth]{figures/Approach}
 \end{figure*}
 
+\begin{table*}[!hbt]
+      \begin{center}
+            \caption{Project Details}
+            \label{tab:project_details}
+            \begin{tabular}{l| c c c c c }
+            \toprule
+            \textbf{Project}   & \textbf{Release}  & \textbf{\# of classes}   & \textbf{SLOC}    & \textbf{\# of comments}  & \textbf{\# of contributors} \\ \midrule 
+              Apache Ant       & 1.7.0             &  1,475                   & 115,881          & 21,587                   & 70  \\                                   
+              Apache Jmeter    & 2.10              &  1,181                   & 81,307           & 20,084                   & 32  \\                                   
+              ArgoUML          & 0.34              &  2,609                   & 176,839          & 67,716                   & 87  \\                                   
+              Columba          & 1.4               &  1,711                   & 100,200          & 33,895                   & 9   \\                                   
+              JFreeChart       & 1.0.19            &  1,065                   & 132,296          & 23,474                   & 18  \\ \bottomrule
+            \end{tabular}
+      \end{center}
+\end{table*}
+
 The main goal of our study is to identify and quantify the different types of self-admitted technical debt found in source code comments. Figure \ref{fig:approach} shows an overview of our approach, and the following subsections detail each step of it.
 
 \subsection{Data Extraction} % (fold)
@@ -45,19 +61,3 @@ The steps mentioned above significantly reduced the number of comments in our da
 To manually classify the comments we first developed a Java based tool that show one comment at time and gives a list of possible classifications \cite{Alves2014MTD} that will be assigned to the comment. Using this tool we were able to classify more than 33,093 comments. 
 
 % subsection manual_classification (end)
-
-\begin{table*}[!hbt]
-      \begin{center}
-            \caption{Project Details}
-            \label{tab:project_details}
-            \begin{tabular}{l| c c c c c }
-            \toprule
-            \textbf{Project}   & \textbf{Release}  & \textbf{\# of classes}   & \textbf{SLOC}    & \textbf{\# of comments}  & \textbf{\# of contributors} \\ \midrule 
-              Apache Ant       & 1.7.0             &  1,475                   & 115,881          & 21,587                   & 70  \\                                   
-              Apache Jmeter    & 2.10              &  1,181                   & 81,307           & 20,084                   & 32  \\                                   
-              ArgoUML          & 0.34              &  2,609                   & 176,839          & 67,716                   & 87  \\                                   
-              Columba          & 1.4               &  1,711                   & 100,200          & 33,895                   & 9   \\                                   
-              JFreeChart       & 1.0.19            &  1,065                   & 132,296          & 23,474                   & 18  \\ \bottomrule
-            \end{tabular}
-      \end{center}
-\end{table*}

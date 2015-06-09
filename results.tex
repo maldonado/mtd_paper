@@ -115,11 +115,18 @@ During the classification we notice that some comments can be classified in more
     
 \end{itemize}
 
-After classifying the comments, we notice that not all of the types mentioned in \cite{Alves2014MTD} could be found. We argue that some of the types like People Debt or Infrastructure Debt is really less probable to appear in source code comments, whereas other types as Build Debt could not be found because we are examining just comments found in Java classes, therefore not taking in consideration build scripts that can be written in other languages (e.g., Maven and Ant use xml files as build scripts). 
+After classifying the comments, we notice that not all of the types mentioned in \cite{Alves2014MTD} could be found. We argue that some of the types like People Debt or Infrastructure Debt is really less probable to appear in source code comments, whereas other types as Build Debt could not be found because we are examining just comments found in Java classes, therefore not taking in consideration build scripts that can be written in other languages (e.g., Maven and Ant use XML files as build scripts). 
 
-Other than that, types like Test Automation debt and Test Debt were considered as the same type in our study due to te resemblance of their purpose. In a similar way, Process Debt, Service Debt, Code Debt and Architecture Debt were considered as Self-admitted design debt in our study.
+Other than that, types like Test Automation debt and Test Debt were considered as the same type in our study due to the resemblance of their purpose. In a similar way, Process Debt, Service Debt, Code Debt and Architecture Debt were considered as Self-admitted design debt in our study.
 
 \conclusionbox{We found 5 different types of self-admitted technical debt in the comments of the studied projects. Design Debt, Defect Debt, Documentation Debt, Requirement Debt and Test Debt. Althoug there are comments that can have more the one type of debt, we found that there is a main type of debt that the comment can be classified to. }
+
+\begin{figure*}[thb!]
+  \caption{Self-admitted technical debt types distribution}
+  \centering
+  \label{fig:satd_distribution}
+  \includegraphics[width=1\textwidth]{figures/technical_debt_distribution.pdf}
+\end{figure*}
 
 % Table \ref{tab:technical_debt_project} shows the total amount of self-admitted technical debt found in the analyzed projects. For example, in Apache Ant out of the 4,140 analyzed comments 134 turnout to be classified as self-admitted technical debt, which represents 3.2\% of the comments of the analyzed comments. 
 
@@ -223,7 +230,7 @@ Other than that, types like Test Automation debt and Test Debt were considered a
 %       \end{center}
 % \end{table}
 
-Second, we quantify and analyze the distribution of the self-admitted technical debt in the comments. Figure \todo{add figure} shows the percentage of each type of self-admitted technical debt.
+Second, we quantify and analyze the distribution of the self-admitted technical debt in the comments. Figure \ref{fig:satd_distribution} shows the percentage of each type of self-admitted technical debt.
 
 \todo{work in second part of the question}
 
