@@ -1,21 +1,25 @@
-The goal of our study is to understand self-admitted technical debt types and classify them. To do so, we divide our research question in two parts first, we manually read trough all comments identifying self-admitted technical debt among them. Once identified, the self-admitted technical debt, is classified into types accordingly with their nature. Second, we quantify these comments identifying the most common types. In the remainder of this section we detail the motivation, approach and results for our research question. 
+The goal of our study is to classify and quantify the different types of self-admitted technical debt. To do so, we divide our study in two parts first, we manually read trough all comments identifying self-admitted technical debt among them. Once identified, the self-admitted technical debt, is classified into different types. Second, we quantify these comments identifying the most common types. Our case study is formalized with the following research question:
+
+
+%In the remainder of this section we detail the motivation, approach and results for our research question. 
 
 \vspace{3mm}
 \noindent\rqi
 \vspace{3mm}
 
-\noindent\textbf{Motivation:} As shown in previous work \cite{Potdar2014ICSME}, self-admitted technical can be an indicator of non-optimal solutions. However, technical debt is a general term, and there are many different types of technical debt \cite{Alves2014MTD}. Although we know that self-admitted technical exists, the different kinds of \textit{self-admitted} technical debt are still unknown. Answering this question is important as different types of debt has different approaches to be solved, and therefore each different type may need a tailored solution. 
+\noindent\textbf{Motivation:} As shown in previous work \cite{Potdar2014ICSME}, self-admitted technical can be an indicator of non-optimal solutions. However, technical debt is a general term, and there are many different types of technical debt \cite{Alves2014MTD}. Although we know that self-admitted technical exists, the different types of self-admitted technical debt are still unknown. For example, are we able to detect documentation debt from code comments? Answering this question is important as different types of debt have different approaches to be solved, and therefore each different type may need a tailored solution. It also helps us understand the opportunities and limitations of using code comments to detect technical debt. 
 
 \vspace{1mm}
-\noindent\textbf{Approach:} To identify the different types of debt found in the comments we manually read trough all filtered comments as described in Section \ref{sec:approach}. While examining the comments we classify each comment by the nature of the debt as proposed by Alves \textit{et al.} in prior work. 
+\noindent\textbf{Approach:} To identify the different types of debt found in the comments we manually read through source code comments as described in Section \ref{sec:approach}. While examining the comments we classify each comment by the nature of the debt, using the descriptions provided by Alves \textit{et al.} as a guideline. 
 
-During the classification we notice that some comments can be classified in more than one type of debt (e.g., a comment reporting a design debt can also be causing an unexpected behavior, which is a defect debt). Although this is an ambiguous situation, and may have different interpretations depending of who is reading the comments, we defined that each comment would have just one classification type for the sake of clarity. To mitigate the chance of misclassifying these comments, we take in consideration the more meaningful type for each comment in a given scenario. To do so, whenever a case like this was found, we did a more detailed investigation (i.e., looking at the source code). In total we read and classified 33,093 comments from five open source projects. The classification took approximately 95 hours and was performed by the first author of the paper. 
+During the classification we notice that some comments can be classified in more than one type of debt (e.g., a comment reporting a design debt can also be causing an unexpected behavior, which is defect debt). Although this is an ambiguous situation, and may have different interpretations depending of who is reading the comments, we defined that each comment would have just one classification type for the sake of clarity. To mitigate the chance of misclassifying these comments, we take in consideration the more meaningful type for each comment in a given scenario. To do so, whenever a case like this occured, we did a more detailed investigation (i.e., by examining the source code and any available documentation). In total we read and classified 33,093 comments from five open source projects. The classification took approximately 95 hours and was performed by the first author of the paper. 
 
 \vspace{1mm}
-\noindent\textbf{Results:} First, we present the types of self-admitted technical debt that we could find in the source code comments that we classified. 
+\noindent\textbf{Results:} We found five different types of self-admitted technical debt. Below, we list the different types of technical debt that we were able to detect and provide example comments to help the reader grasp the different types of self-admitted technical debt comments.
+
 
 \begin{itemize}
-  \item \textbf{Self-admitted design debt:} These comments indicates that there is a problem with the design of the code. They can be comments about misplaced code, lack of abstraction, long methods, poor implementation, workarounds or a temporary solution. Lets consider the following comments:
+  \item \textbf{Self-admitted design debt:} These comments indicate that there is a problem with the design of the code. They can be comments about misplaced code, lack of abstraction, long methods, poor implementation, workarounds or a temporary solution. Lets consider the following comments:
   
   \vspace{1mm}
   \begin{displayquote}
@@ -27,7 +31,7 @@ During the classification we notice that some comments can be classified in more
   \end{displayquote}
   \vspace{1mm}
 
-  These comments are clear examples of what we consider a self-admitted design debt. The authors states their analysis and what need to be done in order to improve the current design of the code. Although, during the analysis we came across more challenging comments that expressed design problems in an indirect way:  
+These comments are clear examples of what we consider as self-admitted \emph{design debt}. In the above comments, the developers state what needs to be done in order to improve the current design of the code. Although the above comments are easy to understand, during our study we came across more challenging comments that expressed design problems in an indirect way. For example: 
   
   \vspace{1mm}
   \begin{displayquote}
@@ -39,7 +43,7 @@ During the classification we notice that some comments can be classified in more
   \end{displayquote}
   \vspace{1mm}
 
-  In the above examples the authors are certain to be implementing code that does not represent the best solution. Intuitively, we know that kind of implementation will degrade the design of the code and should be avoided. 
+In the above example comments the authors are certain to be implementing code that does not represent the best solution. Intuitively, we know that kind of implementation will degrade the design of the code and should be avoided. 
 
   \vspace{1mm}
   \begin{displayquote}
@@ -51,9 +55,9 @@ During the classification we notice that some comments can be classified in more
   \end{displayquote}
   \vspace{1mm}
 
-  The above comments expressed doubt and uncertainty when implementing the code and were considered as self-admitted design debt as well.
+The above comments expressed doubt and uncertainty when implementing the code and were considered as self-admitted design debt as well.
 
-  \item \textbf{Self-admitted defect debt:} In defect debt comments the author states that a part of code do not have the expected behavior, meaning that there is a defect in the code. 
+\item \textbf{Self-admitted defect debt:} In defect debt comments the author states that a part of the code does not have the expected behavior, meaning that there is a defect in the code. 
   
   \vspace{1mm}
   \begin{displayquote}
@@ -65,9 +69,9 @@ During the classification we notice that some comments can be classified in more
   \end{displayquote}
   \vspace{1mm}
   
-  As shown in these examples there are defects that are known by the developers, but for some reason is not fixed yet. 
+As shown in these examples there are defects that are known by the developers, but for some reason is not fixed yet. 
 
-  \item \textbf{Self-admitted documentation debt:} In the documentation debt comments the author express that there is not proper documentation supporting that part of the program.
+  \item \textbf{Self-admitted documentation debt:} In the documentation debt comments the author express that there is no proper documentation supporting that part of the program.
   
   \vspace{1mm}
   \begin{displayquote}
@@ -78,6 +82,8 @@ During the classification we notice that some comments can be classified in more
   	\textit{``// TODO Document the reason for this''}
   \end{displayquote}
   \vspace{1mm}
+  
+  Here, the developers clearly recognize the need to document their code, however, for some reason they do not document it yet.
   
   \item \textbf{Self-admitted requirement debt:} Requirement debt comments express incompleteness of the method, class or program as observed in the following comments:
   
@@ -95,11 +101,11 @@ During the classification we notice that some comments can be classified in more
   \end{displayquote}
   \vspace{1mm}  
   
-  	The last example shows a comment that could be considered as having more than one type of debt. (i.e., requirement debt and defect debt), but as mentioned in the classification approach, we choose to maintain one type only for each comment. 
+The last example shows a comment that could be considered as having more than one type of debt. (i.e., requirement debt and defect debt), but as mentioned in the classification approach, we choose to maintain one type only for each comment. 
   	
-  	In our understanding, the defect debt expressed in the comment would not exist if the requirement debt did not exists. Therefore, the main debt in this comment is a requirement debt (i.e., incomplete implementation of the copy function). 
+In our understanding, the defect debt expressed in the comment would not exist if the requirement debt did not exists. Therefore, the main debt in this comment is a requirement debt (i.e., incomplete implementation of the copy function). 
   	
-  	One more reason that we give a comment only one classification type is that there is no way to tell if the other requirement debts are not causing an unexpected behavior, except in the case that the author of the comment express is. 
+%One more reason that we give a comment only one classification type is that there is no way to tell if the other requirement debts are not causing an unexpected behavior, except in the case that the author of the comment express is. 
   
   \vspace{1mm}
   \item \textbf{Self-admitted test debt:} Test debt comments are the ones that express the need for implementation or improvement of the current tests. As shown in the examples below, test debt comments are very straight forward in their meaning. 
@@ -115,11 +121,12 @@ During the classification we notice that some comments can be classified in more
     
 \end{itemize}
 
-After classifying the comments, we notice that not all of the types mentioned in \cite{Alves2014MTD} could be found. We argue that some of the types like People Debt or Infrastructure Debt is really less probable to appear in source code comments, whereas other types as Build Debt could not be found because we are examining just comments found in Java classes, therefore not taking in consideration build scripts that can be written in other languages (e.g., Maven and Ant use XML files as build scripts). 
+After classifying the comments, we notice that not all of the types mentioned in by Aleves \emph{et al.}~\cite{Alves2014MTD} could be found. We argue that some types like people debt or infrastructure debt are less probable to appear in source code comments. Other types such as build debt could not be found because we are examining comments in Java classes only, not taking in consideration build scripts that are usually written in other languages (e.g., Maven and Ant use XML files as build scripts). 
 
-Other than that, types like test automation debt and test debt were considered as self-admitted test debt in our study due to the resemblance of their purpose. In a similar way, process debt, service debt, code debt and architecture debt were considered as self-admitted design debt in our study.
+%Other than that, types like test automation debt and test debt were considered as self-admitted test debt in our study due to the resemblance of their purpose. In a similar way, process debt, service debt, code debt and architecture debt were considered as self-admitted design debt in our study.
 
-\conclusionbox{We find 5 different types of self-admitted technical debt in the comments of the studied projects. Design Debt, Defect Debt, Documentation Debt, Requirement Debt and Test Debt. Although there are comments that can have more the one type of debt, we found that there is a main type of debt that the comment can be classified to.}
+\conclusionbox{We find five different types of self-admitted technical debt, i.e., design debt, defect debt, documentation debt, requirement debt and test debt.}
+%Although there are comments that can have more the one type of debt, we found that there is a main type of debt that the comment can be classified to.
 
 \begin{figure*}[thb!]
   \centering
@@ -128,7 +135,7 @@ Other than that, types like test automation debt and test debt were considered a
   \caption{Self-admitted technical debt types distribution}
 \end{figure*}
 
-Second, we quantify and analyze the distribution of the self-admitted technical debt in the comments. In total we find more than 2,457 comments that where classified as one of the types of self-admitted technical debt representing 7.42\% of all comments classified. The percentage of self-admitted technical debt found for each project is presented in Table \ref{tab:total_self_admitted_per_project}. ArgoUml is the project with the higher percentage of self-admitted technical debt and Apache Ant has the lowest percentage, 16.8\% and 3.2\% respectively.
+In addition to determining the different type of self-admitted technical debt, we would like to quantify the different types. Doing so will help us understand the strengths and weaknesses of using code comments to detect technical debt. After analyzing the more than 33K comments, we found that only 2,457 comments are self-admitted technical debt comments, representing 7.42\% (i.e., $\frac{2457}{33093}$) of all the classified comments. The percentage of self-admitted technical debt found for each project is presented in Table~\ref{tab:total_self_admitted_per_project}. ArgoUml is the project with the highest percentage of self-admitted technical debt and Apache Ant has the lowest percentage, amounting to 16.8\% and 3.2\% respectively.
 
 \begin{table}[!hbt]
      \begin{center}
@@ -146,12 +153,14 @@ Second, we quantify and analyze the distribution of the self-admitted technical 
      \end{center}
 \end{table}
 
-Figure \ref{fig:satd_distribution} shows the percentage of each type of self-admitted technical debt across the project. As each project has a different number of comments we normalized the data considering the total number of self-admitted technical debt comments that the project has. For example, if a project has 100 self-admitted technical debt comments and 10 where of the design debt type, we say that the project has 10\% of self-admitted design technical debt. Analyzing the figure \ref{fig:satd_distribution} we find that self-admitted design debt is the most common in 4 out of 5 projects. Its values range from 42\% in Columba to 84\% in Jmeter and JFreeChart. Self-admitted defect debt, self-admitted documentation debt and self-admitted test debt has low representativity barely reaching 10\% of the occurrences. 
+Figure \ref{fig:satd_distribution} shows the percentage of each type of self-admitted technical debt across the projects. Since each project has a different number of comments we normalized the data, presenting the percentages of the different types rather than the raw numbers. For example, if a project has 100 self-admitted technical debt comments and 10 where design debt type, we say that the project has 10\% of self-admitted design technical debt. Analyzing the figure \ref{fig:satd_distribution} we find that self-admitted design debt is the most common in 4 out of 5 projects. Its values range from 42\% in Columba to 84\% in Jmeter and JFreeChart. Self-admitted defect debt, self-admitted documentation debt and self-admitted test debt make up a low percentage of the total self-admitted technical debt, only making up approximately 10\%. 
 
-\conclusionbox{We find that the majority of the self-admitted technical debt comments are of the design debt type. It ranged from 42\% to 84\% across the projects. The second most frequent type was requirement debt that ranged from 5\% to 45\%. The remaining types has low relevance if considered that they represented less than 10\%  of the occurrences}
+We notice that Columba and ArgoUml have the highest occurrences of self-admitted requirement debt. Columba is a email client application written in Java, which has 9 contributors \cite{Openhub:home}, and a considerable number of classes 1,711. It is reasonable to think that developers have limited time to develop features. Therefore, leaving comments of features that need to be implemented in the future (i.e., requirement debt) is more likely. 
 
-We notice that Columba and ArgoUml has the highest occurrences of self-admitted requirement debt. Columba is a email client application written in Java, which has 9 contributors \cite{Openhub:home}, and a considerable number of classes 1,711. It is reasonable to think that developers has only limited time to developed features and that there are priority between than. Therefore, leaving comments of features that need to be implemented in the future is probable. There is one more thing to take into consideration that is the domain of the project is well known, that way developers do not need to necessarily wait for the next requirement to know what need to be implemented, although time still a constraint. Based on these observations, we assume that the hight number of self-admitted requirement technical debt in Columba reflects that the project has not reached yet its full potential regarding to features. 
+%Another aspect to consider is the domain of the project, that way developers do not need to necessarily wait for the next requirement to know what need to be implemented, although time still a constraint. Based on these observations, we assume that the hight number of self-admitted requirement technical debt in Columba reflects that the project has not reached yet its full potential regarding to features. 
 
-ArgoUml by the other hand, has a hight number of contributors 87 and yet has a hight number of self-admitted requirement debt. We argue that the domain and complexity of the application can justify these numbers. As an UML modeling tool, ArgoUml itself is impacted for external changes like different implementations of UML language (e.g., 1.2 , 1.3 and then 1.4) trough every change there may be many features that need to be refactored. 
+ArgoUml has a hight number of contributors 87 and yet has a hight number of self-admitted requirement debt. We argue that the domain and complexity of the application may explain these numbers. As an UML modeling tool, ArgoUml itself is impacted for external changes like different implementations of UML language (e.g., 1.2 , 1.3 and then 1.4) trough every change there may be many features that need to be refactored.  \emad{try to look for a stronger argument here.}
 
-For the other projects we assume that they reach a maturity point where all the main features was implemented and the majority of the problems are related to the design of the code. 
+%For the other projects we assume that they reach a maturity point where all the main features was implemented and the majority of the problems are related to the design of the code. 
+
+\conclusionbox{We find that the majority of the self-admitted technical debt comments are design debt, which ranged from 42\% to 84\% across the projects. The second most frequent type was requirement debt that ranged from 5\% to 45\%. The remaining types have low relevance if considered that they represented less than 10\% of the occurrences}
