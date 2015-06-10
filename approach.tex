@@ -41,7 +41,7 @@ After obtaining the source code of all projects, we extract the comments from th
 \subsection{Filter Comments} % (fold)
 \label{sub:filter_comments}
 
-Source code comments can be used for different purposes in a project like giving context, as part of documentation, to express thoughts, opinions and authorship, and in some cases, to remove source code from the program. Comments are used freely for developers and with few formalities, if any at all. This informal environment allows developers to bring to light opinions, insights and even confessions (i.e, self-admitted technical debt). 
+Source code comments can be used for different purposes in a project like giving context, as part of the documentation, to express thoughts, opinions and authorship, and in some cases, to remove source code from the program. Comments are used freely for developers and with few formalities, if any at all. This informal environment allows developers to bring to light opinions, insights and even confessions (e.g., self-admitted technical debt). 
 
 As shown in prior work by Potdar and Shihab \cite{Potdar2014ICSME}, part of these comments can be identified as self-admitted technical debt, but they are not the majority of cases. With that in mind, we develop and apply 4 filtering heuristics to narrow down the comments eliminating the ones that are less likely to be classified as self-admitted technical debt.
 
@@ -60,6 +60,6 @@ The steps mentioned above significantly reduced the number of comments in our da
 \subsection{Manual Classification} % (fold)
 \label{sub:manual_classification}
 
-To manually classify the comments we first developed a Java based tool that show one comment at time and gives a list of possible classifications \cite{Alves2014MTD} that will be assigned to the comment. Using this tool we were able to classify more than 33,093 comments. 
+To manually classify the comments we first developed a Java based tool that show one comment at time and gives a list of possible classifications  that will be assigned to the comment~\cite{Alves2014MTD}. After applying the different filtering steps, we successfully classified more than \emad{more than or exactly that number?} 33,093 comments. The more than 33 thousand comments were classified into five different types of self-admitted technical debt, i.e., design debt, defect debt, documentation debt, requirement debt and test debt.
 
 % subsection manual_classification (end)
