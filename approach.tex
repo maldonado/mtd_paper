@@ -12,11 +12,11 @@
             \begin{tabular}{l| c c c c c }
             \toprule
             \textbf{Project}   & \textbf{Release}  & \textbf{\# of classes}   & \textbf{SLOC}    & \textbf{\# of comments}  & \textbf{\# of contributors} \\ \midrule 
-              Apache Ant       & 1.7.0             &  1,475                   & 115,881          & 21,587                   & 70  \\                                   
-              Apache Jmeter    & 2.10              &  1,181                   & 81,307           & 20,084                   & 32  \\                                   
-              ArgoUML          & 0.34              &  2,609                   & 176,839          & 67,716                   & 87  \\                                   
-              Columba          & 1.4               &  1,711                   & 100,200          & 33,895                   & 9   \\                                   
-              JFreeChart       & 1.0.19            &  1,065                   & 132,296          & 23,474                   & 18  \\ \bottomrule
+              Apache Ant       & 1.7.0             &  1,475                   & 115,881          & 21,587                   & 74  \\                       
+              Apache Jmeter    & 2.10              &  1,181                   & 81,307           & 20,084                   & 33  \\                         
+              ArgoUML          & 0.34              &  2,609                   & 176,839          & 67,716                   & 87  \\               
+              Columba          & 1.4               &  1,711                   & 100,200          & 33,895                   & 9   \\                   
+              JFreeChart       & 1.0.19            &  1,065                   & 132,296          & 23,474                   & 19  \\ \bottomrule
             \end{tabular}
       \end{center}
 \end{table*}
@@ -45,15 +45,19 @@ Source code comments can be used for different purposes in a project like giving
 
 As shown in prior work by Potdar and Shihab \cite{Potdar2014ICSME}, part of these comments can be identified as self-admitted technical debt, but they are not the majority of cases. With that in mind, we develop and apply 4 filtering heuristics to narrow down the comments eliminating the ones that are less likely to be classified as self-admitted technical debt.
 
-To do so, we developed a Java based tool that reads from the database the data obtained by parsing the source code. Next, it executes the filtering heuristics and stores the result back in the database. The retrieved data contains information like the line number that a class/comment begins/ends and the type, considering the Java syntax, of the comment (i.e., Block, Line or Javadoc). With this information we process the filtering heuristics as described next.
+To do so, we developed a Java based tool that reads from the database the data obtained by parsing the source code. Next, it executes the filtering heuristics and stores the result back in the database. The retrieved data contains information like the line number that a class/comment begins/ends and the type, considering the Java syntax, of the comment (i.e., Block, Single-line or Javadoc). With this information we process the filtering heuristics as described next.
 
-We apply first a heuristic to remove license comments. When license comments are added to the Java files in a project they are generally placed in the first lines of the file, before the class declaration. Based on this knowledge we created a heuristic that eliminates comments that are placed before the class declaration. 
+We found that license comments are very not likely to contain self-admitted technical debt, and that license comments are commonly added before the declaration of the class. Therefore, we create a heuristic that removes comments that are placed before the class declaration. Since we know the line number that the class was declared we can easily check for comments that are placed before that line and remove them.
 
-Second, we use a heuristic to merge multiple line comments. Some times developers make long comments, using multiple single-line comments instead of a Block comment. Treating every single line of a long comment as an individual comment causes us to miss important context details that could be recovered by treating all single-line comments as a single block comment. Therefore, we create this heuristic that searches for consecutive single-line comments and groups them.
+% We apply first a heuristic to remove license comments. When license comments are added to the Java files in a project they are generally placed in the first lines of the file, before the class declaration. Based on this knowledge we created a heuristic that eliminates comments that are placed before the class declaration. 
 
-Third, a heuristic to remove commented source code. Commented source code can be found for many different reasons. One of the possibilities is that the code is not being used, other is that the code is used for debug purposes only. Since commented code does not have self-admitted technical debt, we remove commented source code using a regular expressions that captures typical Java code structures.
+We also notice that some times developers make long comments, using multiple \emph{Single-line} comments instead of a Block comment. This characteristic can hinder the understanding of the message. Consider the case that the reader (i.e., human or machine) analyze each one of these comments independently, the message would be incomplete and the meaning lost. To solve that problem, we create a heuristic that searches for consecutive single-line comments and groups them as one. We identify consecutive comments by subtracting the line number of both comments. If the result of the difference is equals a -1 we have a consecutive comment. For example, Single-line comment A is placed in line number 100 and Single-line comment B is placed in line 101. The subtraction of the line numbers will result in -1, therefore the comments are consecutive.
+ 
+% Second, we use a heuristic to merge multiple line comments. Some times developers make long comments, using multiple single-line comments instead of a Block comment. Treating every single line of a long comment as an individual comment causes us to miss important context details that could be recovered by treating all single-line comments as a single block comment. Therefore, we create this heuristic that searches for consecutive single-line comments and groups them.
 
-Fourth, a heuristic to remove Javadoc comments. The Javadoc comments contain information about the purpose and use of methods and classes. That said, we found that Javadoc comments rarely mention Self-admitted Design Technical Debt. Therefore, we create a heuristic that removes Javadoc comments. To mitigate the risk of eliminating some correct cases, we added one exception - if the comment contains one of the task-reserved words (i.e., ``todo'', ``fixme'', or ``xxx'') we keep that Javadoc comment. We use a simple regular expression to  detect the task-reserved words in the Javadoc comments.
+Similarly, is common to find commented source code across the projects, and this can be due to many different reasons. One of the possibilities is that the code is not being used, other is that the code is used for debug purposes only. Based on our analysis, commented source code does not have self-admitted technical debt. Our heuristic remove commented source code using a regular expression that captures typical Java code structures.
+
+Lastly, when analyzing Javadoc comments we found that they rarely mention self-admitted technical debt. For the Javadoc comments that does mention self-admitted technical debt we notice that they usually contains one of the task-reserved words (i.e., ``todo'', ``fixme'', or ``xxx''). Based on this, our heuristic remove all comments of the type Javadoc unless they contain at least one of the task-reserved words. To do so, we create a simple regular expression that search for the task-reserved words before removing the comment.  
 
 The steps mentioned above significantly reduced the number of comments in our dataset and helped us focus on the most applicable and insightful comments. For example, in the Apache Ant project, applying the above steps helped reduce the number of comments from 21,587 to 4,140 comments meaning that 80.82\% of the comments were filtered. Table \ref{tab:filtering_heuristics_details} provides details for each one of the projects.
 
@@ -61,9 +65,10 @@ The steps mentioned above significantly reduced the number of comments in our da
       \begin{center}
             \caption{Filtering heuristics details}
             \label{tab:filtering_heuristics_details}
-            \begin{tabular}{l| l l p{1in} }
+            \begin{tabular}{l| c c c }
             \toprule
-            \textbf{Project}   & \textbf{\# of comments}  & \textbf{\# after filtering} & \textbf{\%}\\ \midrule 
+            \thead{ Project}   & \thead{\# of comments \\before \\filtering}  & \thead{\# of comments \\after \\filtering} & \thead{\%  of comments \\remained}\\ \midrule 
+            
               Apache Ant       & 21,587                & 4,140                   & 19.17 \% \\ 
               Apache Jmeter    & 20,084                & 8,163                   & 40.64 \% \\
               ArgoUML          & 67,716                & 9,788                   & 14.45 \% \\              
