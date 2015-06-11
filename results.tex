@@ -103,7 +103,7 @@ As shown in these examples there are defects that are known by the developers, b
   
 The last example shows a comment that could be considered as having more than one type of debt. (i.e., requirement debt and defect debt), but as mentioned in the classification approach, we choose to maintain one type only for each comment. 
   	
-In our understanding, the defect debt expressed in the comment would not exist if the requirement debt did not exists. Therefore, the main debt in this comment is a requirement debt (i.e., incomplete implementation of the copy function). 
+Based on our understanding, the defect debt expressed in the comment would not exist if the requirement debt did not exists. Therefore, the main debt in this comment is a requirement debt (i.e., incomplete implementation of the copy function). 
   	
 %One more reason that we give a comment only one classification type is that there is no way to tell if the other requirement debts are not causing an unexpected behavior, except in the case that the author of the comment express is. 
   
@@ -130,9 +130,9 @@ After classifying the comments, we notice that not all of the types mentioned in
 
 \begin{figure*}[thb!]
   \centering
-  \label{fig:satd_distribution}
   \includegraphics[width=1\textwidth]{figures/technical_debt_distribution.pdf}
   \caption{Self-admitted technical debt types distribution}
+  \label{fig:satd_distribution}
 \end{figure*}
 
 In addition to determining the different type of self-admitted technical debt, we would like to quantify the different types. Doing so will help us understand the strengths and weaknesses of using code comments to detect technical debt. After analyzing the more than 33K comments, we found that only 2,457 comments are self-admitted technical debt comments, representing 7.42\% (i.e., $\frac{2457}{33093}$) of all the classified comments. The percentage of self-admitted technical debt found for each project is presented in Table~\ref{tab:total_self_admitted_per_project}. ArgoUml is the project with the highest percentage of self-admitted technical debt and Apache Ant has the lowest percentage, amounting to 16.8\% and 3.2\% respectively.
@@ -153,14 +153,16 @@ In addition to determining the different type of self-admitted technical debt, w
      \end{center}
 \end{table}
 
-Figure \ref{fig:satd_distribution} shows the percentage of each type of self-admitted technical debt across the projects. Since each project has a different number of comments we normalized the data, presenting the percentages of the different types rather than the raw numbers. For example, if a project has 100 self-admitted technical debt comments and 10 where design debt type, we say that the project has 10\% of self-admitted design technical debt. Analyzing the figure \ref{fig:satd_distribution} we find that self-admitted design debt is the most common in 4 out of 5 projects. Its values range from 42\% in Columba to 84\% in Jmeter and JFreeChart. Self-admitted defect debt, self-admitted documentation debt and self-admitted test debt make up a low percentage of the total self-admitted technical debt, only making up approximately 10\%. 
+Figure \ref{fig:satd_distribution} shows the percentage of each type of self-admitted technical debt across the projects. Since each project has a different number of comments we normalized the data, presenting the percentages of the different types rather than the raw numbers. For example, if a project has 100 self-admitted technical debt comments and 10 where design debt type, we say that the project has 10\% of self-admitted design technical debt. 
+
+Analyzing the Figure \ref{fig:satd_distribution} we find that self-admitted design debt is the most common in 4 out of 5 projects. Self-admitted design technical debt values ranged from 42\% in Columba (i.e., project with the lowest percentage) to 84\% in Jmeter and JFreeChart (i.e., projects with the highest percentage). The second most frequent type is self-admitted requirement debt with values between 5\% and 45\%, followed by self-admitted defect technical debt making up 4\% to 9\% of the comments. Self-admitted test technical debt ranged from <1\% to 7\% whereas self-admitted documentation debt was between 0\% and 5\%.     
 
 We notice that Columba and ArgoUml have the highest occurrences of self-admitted requirement debt. Columba is a email client application written in Java, which has 9 contributors \cite{Openhub:home}, and a considerable number of classes 1,711. It is reasonable to think that developers have limited time to develop features. Therefore, leaving comments of features that need to be implemented in the future (i.e., requirement debt) is more likely. 
 
 %Another aspect to consider is the domain of the project, that way developers do not need to necessarily wait for the next requirement to know what need to be implemented, although time still a constraint. Based on these observations, we assume that the hight number of self-admitted requirement technical debt in Columba reflects that the project has not reached yet its full potential regarding to features. 
 
-ArgoUml has a hight number of contributors 87 and yet has a hight number of self-admitted requirement debt. We argue that the domain and complexity of the application may explain these numbers. As an UML modeling tool, ArgoUml itself is impacted for external changes like different implementations of UML language (e.g., 1.2 , 1.3 and then 1.4) trough every change there may be many features that need to be refactored.  \emad{try to look for a stronger argument here.}
+ArgoUml has a hight number of contributors 87 and yet has a hight number of self-admitted requirement debt. We argue that the domain and complexity of the application may explain these numbers. As an UML modeling tool, ArgoUml itself is impacted for external changes like different implementations of UML language (e.g., 1.2 , 1.3 and then 1.4) trough every change there may be many features that need to be refactored. \emad{try to look for a stronger argument here.}
 
 %For the other projects we assume that they reach a maturity point where all the main features was implemented and the majority of the problems are related to the design of the code. 
 
-\conclusionbox{We find that the majority of the self-admitted technical debt comments are design debt, which ranged from 42\% to 84\% across the projects. The second most frequent type was requirement debt that ranged from 5\% to 45\%. The remaining types have low relevance if considered that they represented less than 10\% of the occurrences}
+\conclusionbox{We find that the majority of the self-admitted technical debt comments are design debt, which ranged from 42\% to 84\% across the projects. The second most frequent type was requirement debt that ranged from 5\% to 45\%. The remaining types have low frequency if considered that they represented less than 10\% of the occurrences}
