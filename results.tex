@@ -130,7 +130,8 @@ After classifying the comments, we notice that not all of the types mentioned in
 
 \begin{figure*}[thb!]
   \centering
-  \includegraphics[width=1\textwidth]{figures/technical_debt_distribution.pdf}
+  \includegraphics[width=0.98\textwidth]{figures/technical_debt_distribution.pdf}
+  \vspace{-8mm}
   \caption{Self-admitted technical debt types distribution}
   \label{fig:satd_distribution}
 \end{figure*}
@@ -159,6 +160,8 @@ Analyzing the Figure \ref{fig:satd_distribution} we find that self-admitted desi
 
 We notice that Columba and ArgoUml have the highest occurrences of self-admitted requirement debt. Columba is a email client application written in Java, which has 9 contributors \cite{Openhub:home}, and a considerable number of classes 1,711. It is reasonable to think that developers have limited time to develop features. Therefore, leaving comments of features that need to be implemented in the future (i.e., requirement debt) is more likely. 
 
-ArgoUml has a hight number of contributors i.e., 87 and yet has a hight number of self-admitted requirement debt. Analyzing the comments we notice that there occurrences about the need of support for internationalization and other comments express the need to implement code to make features compatible with newer versions of the UML language. Based on that we argue that coupling with external changes that are inherent of the application domain and the adoption of the tool from users all over the world \cite{Openhub:home} had increased the number of self-admitted requirement debt. 
+ArgoUml has a hight number of contributors i.e., 87 and yet has a hight number of self-admitted requirement debt. Analyzing the comments we notice that there occurrences about the need of support for internationalization and other comments express the need to implement code to make features compatible with newer versions of the UML language. 
+
+Based on that we argue that coupling with external changes that are inherent of the application domain and the adoption of the tool from users all over the world \cite{Openhub:home} had increased the number of self-admitted requirement debt. 
 
 \conclusionbox{We find that the majority of the self-admitted technical debt comments are design debt, which ranged from 42\% to 84\% across the projects. The second most frequent type was requirement debt that ranged from 5\% to 45\%. The remaining types have low frequency if considered that they represented less than 10\% of the occurrences}
