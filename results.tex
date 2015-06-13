@@ -142,9 +142,9 @@ In addition to determining the different type of self-admitted technical debt, w
      \begin{center}
            \caption{Self-admitted technical debt per project}
            \label{tab:total_self_admitted_per_project}
-           \begin{tabular}{l| c c c }
+           \begin{tabular}{l| p{0.75in} p{.7in} p{0.7in} }
            \toprule
-           \thead{Project}      & \thead{\# of \\analyzed \\comments}     & \thead{\# of \\self-admitted \\TD found } & \thead{\% of \\self-admitted \\TD per project} \\ \midrule 
+           \textbf{Project}      & \textbf{\# of analyzed comments}     & \textbf{\# of self-admitted TD comments} & \textbf{\% of self-admitted TD per project} \\ \midrule 
              Apache Ant          & 4,140                          & 134                                & 3.2  \\                                   
              Apache Jmeter       & 8,163                          & 375                                & 4.6  \\                                   
              ArgoUML             & 9,788                          & 1,653                              & 16.8 \\                                   
@@ -160,7 +160,7 @@ Analyzing the Figure \ref{fig:satd_distribution} we find that self-admitted desi
 
 We notice that Columba and ArgoUml have the highest occurrences of self-admitted requirement debt. Columba is a email client application written in Java, which has 9 contributors \cite{Openhub:home}, and a considerable number of classes 1,711. It is reasonable to think that developers have limited time to develop features. Therefore, leaving comments of features that need to be implemented in the future (i.e., requirement debt) is more likely. 
 
-ArgoUml has a hight number of contributors i.e., 87 and yet has a hight number of self-admitted requirement debt. Analyzing the comments we notice that there occurrences about the need of support for internationalization and other comments express the need to implement code to make features compatible with newer versions of the UML language. 
+ArgoUml has a high number of contributors i.e., 87 and yet has a hight number of self-admitted requirement debt. Analyzing the comments we notice that there occurrences about the need of support for internationalization and other comments express the need to implement code to make features compatible with newer versions of the UML language. 
 
 Based on that we argue that coupling with external changes that are inherent of the application domain and the adoption of the tool from users all over the world \cite{Openhub:home} had increased the number of self-admitted requirement debt. 
 

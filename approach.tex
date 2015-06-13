@@ -51,7 +51,7 @@ We found that license comments are very not likely to contain self-admitted tech
 
 % We apply first a heuristic to remove license comments. When license comments are added to the Java files in a project they are generally placed in the first lines of the file, before the class declaration. Based on this knowledge we created a heuristic that eliminates comments that are placed before the class declaration. 
 
-We also notice that some times developers make long comments, using multiple \emph{Single-line} comments instead of a Block comment. This characteristic can hinder the understanding of the message. Consider the case that the reader (i.e., human or machine) analyze each one of these comments independently, the message would be incomplete and the meaning lost. To solve that problem, we create a heuristic that searches for consecutive single-line comments and groups them as one. We identify consecutive comments by subtracting the line number of both comments. If the result of the difference is equals a -1 we have a consecutive comment. For example, Single-line comment A is placed in line number 100 and Single-line comment B is placed in line 101. The subtraction of the line numbers will result in -1, therefore the comments are consecutive.
+We also notice that some times developers make long comments, using multiple \emph{single-line} comments instead of a Block comment. This characteristic can hinder the understanding of the message. Consider the case that the reader (i.e., human or machine) analyze each one of these comments independently, the message would be incomplete and the meaning lost. To solve that problem, we create a heuristic that searches for consecutive single-line comments and groups them as one. We identify consecutive comments by subtracting the line number of both comments. If the result of the difference is equals a -1 we have a consecutive comment. For example, Single-line comment A is placed in line number 100 and Single-line comment B is placed in line 101. The subtraction of the line numbers will result in -1, therefore the comments are consecutive.
  
 % Second, we use a heuristic to merge multiple line comments. Some times developers make long comments, using multiple single-line comments instead of a Block comment. Treating every single line of a long comment as an individual comment causes us to miss important context details that could be recovered by treating all single-line comments as a single block comment. Therefore, we create this heuristic that searches for consecutive single-line comments and groups them.
 
@@ -65,9 +65,9 @@ The steps mentioned above significantly reduced the number of comments in our da
       \begin{center}
             \caption{Filtering heuristics details}
             \label{tab:filtering_heuristics_details}
-            \begin{tabular}{l| c c c }
+            \begin{tabular}{l| p{0.55in} p{0.75in} p{0.75in} }
             \toprule
-            \thead{Project}   & \thead{\# of comments \\before \\filtering}  & \thead{\# of comments \\after \\filtering} & \thead{\%  of comments \\remained}\\ \midrule 
+            \thead{\textbf{Project}}   & \textbf{Total \# of comments}  & \textbf{\# of comments after filtering} & \textbf{\%  of TD-related comments}\\ \midrule 
             
               Apache Ant       & 21,587                & 4,140                   & 19.17 \% \\ 
               Apache Jmeter    & 20,084                & 8,163                   & 40.64 \% \\
@@ -84,5 +84,5 @@ The steps mentioned above significantly reduced the number of comments in our da
 
 To manually classify the comments we first developed a Java based tool that show one comment at time and gives a list of possible classifications  that will be assigned to the comment~\cite{Alves2014MTD}. After applying the different filtering steps, we successfully classified 33,093 comments. The more than 33 thousand comments were classified into five different types of self-admitted technical debt, i.e., design debt, defect debt, documentation debt, requirement debt and test debt.
 
-The first author who made the classification has more than 8 years of experience working in the industry as a software engineer, during this time he designed, implemented and maintained several programs using, in particular the Java programming language. He developed solid skills in object orientated programing and design patterns. We consider that these qualifications provide the necessary background to conduce the manual classification of the comments.   
+The first author who made the classification has more than 8 years of experience working in the industry as a software engineer, during this time he designed, implemented and maintained several programs using, in particular the Java programming language. He developed solid skills in object orientated programming and design patterns. We consider that these qualifications provide the necessary background to conduct the manual classification of the comments.   
 % subsection manual_classification (end)
