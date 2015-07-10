@@ -35,8 +35,13 @@ The number of contributors was extracted from OpenHub, an on-line community and 
  
 \subsection{Parse Source Code} % (fold)
 \label{sub:parse_source_code}
-\revtwo{This section should be more detailed (including information about JDeodorant), try to make it self-contained [medium]}
-After obtaining the source code of all projects, we extract the comments from their source code. We use JDeodorant \cite{Tsantalis2008CSMR}, an open-source Eclipse plug-in, to parse the source code and extract the code comments. Once extracted, we store all comments in a relational database to facilitate the processing of the data. 
+
+\everton{After obtaining the source code of all projects, we extract the comments from their source code. We use JDeodorant \cite{Tsantalis2008CSMR}, an open-source Eclipse plug-in, to parse the source code and extract the code comments. JDeodorant is capable of identify design flaws (i.e., bad smells) in Java projects, and suggest refactoring opportunities to solve them.} 
+
+\everton{This tool uses the Eclipse AST framework to create an Abstract Syntax Tree map of the source code. The Abstract Syntax Tree map contains detailed information about the project such as: the source code comments, its type (i.e., Block, Single-line or Javadoc), the line where each one of these comments begins and finishes.} 
+
+\everton{Lastly, we perform the necessary modifications in our version of JDeodorant to extract this information, and store all comments in a relational database to facilitate the processing of the data.}
+
 % subsection parse_source_code (end) 
 
 \subsection{Filter Comments} % (fold)
@@ -48,16 +53,13 @@ As shown in prior work by Potdar and Shihab \cite{Potdar2014ICSME}, part of thes
 
 To do so, we developed a Java based tool that reads from the database the data obtained by parsing the source code. Next, it executes the filtering heuristics and stores the result back in the database. The retrieved data contains information like the line number that a class/comment begins/ends and the type, considering the Java syntax, of the comment (i.e., Block, Single-line or Javadoc). With this information we process the filtering heuristics as described next.
 
-\revone{Remove only license commens instead of all of class comments [medium]}
 We found that license comments are very not likely to contain self-admitted technical debt, and that license comments are commonly added before the declaration of the class. Therefore, we create a heuristic that removes comments that are placed before the class declaration. Since we know the line number that the class was declared we can easily check for comments that are placed before that line and remove them.
 
 We also notice that some times developers make long comments, using multiple \emph{single-line} comments instead of a Block comment. This characteristic can hinder the understanding of the message. Consider the case that the reader (i.e., human or machine) analyze each one of these comments independently, the message would be incomplete and the meaning lost. To solve that problem, we create a heuristic that searches for consecutive single-line comments and groups them as one. We identify consecutive comments by subtracting the line number of both comments. If the result of the difference is equals a -1 we have a consecutive comment. For example, Single-line comment A is placed in line number 100 and Single-line comment B is placed in line 101. The subtraction of the line numbers will result in -1, therefore the comments are consecutive.
  
-\revone{Add regular expression used for removing java source code [easy]}
 Similarly, is common to find commented source code across the projects, and this can be due to many different reasons. One of the possibilities is that the code is not being used, other is that the code is used for debug purposes only. Based on our analysis, commented source code does not have self-admitted technical debt. Our heuristic remove commented source code using a simple regular expression that captures typical Java code structures.
 
 % else\s*\{|try\s\{|do\s*\{|finally\s*\{|if\s*\(|for\s*\(|while\s*\(|switch\s*\(|Long\s*\(|Byte\s*\(|Double\s*\(|Float\s*\(|Integer\s*\(|Short\s*\(|BigDecimal\s*\(|BigInteger\s*\(|Character\s*\(|Boolean\s*\(|String\s*\(|assert\s*\(|System.out.|public\s*void|private\s*static*final|catch\s*\( 
-
 
 Lastly, when analyzing Javadoc comments we found that they rarely mention self-admitted technical debt. For the Javadoc comments that does mention self-admitted technical debt we notice that they usually contains one of the task-reserved words (i.e., ``todo'', ``fixme'', or ``xxx''). Based on this, our heuristic remove all comments of the type Javadoc unless they contain at least one of the task-reserved words. To do so, we create a simple regular expression that search for the task-reserved words before removing the comment.  
 
