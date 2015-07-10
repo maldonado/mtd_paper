@@ -13,8 +13,6 @@ During the classification we notice that some comments can be classified in more
 
 To mitigate the chance of misclassifying these comments, we take in consideration the more meaningful type for each comment in a given scenario. To do so, whenever a case like this occurred, we did a more detailed investigation (i.e., by examining the source code and any available documentation). In total we read and classified 33,093 comments from five open source projects. The classification took approximately 95 hours and was performed by the first author of the paper. 
 
-\revtwo{Presented comments are not related with their respectives projects [medium]}
-
 \vspace{1mm}
 \noindent\textbf{Results:} We found five different types of self-admitted technical debt. Below, we list the different types of technical debt that we were able to detect and provide example comments to help the reader grasp the different types of self-admitted technical debt comments.
 
@@ -24,11 +22,11 @@ To mitigate the chance of misclassifying these comments, we take in consideratio
   
   \vspace{1mm}
   \begin{displayquote}
-     \textit{``TODO: - This method is too complex, lets break it up''}
+     \textit{``TODO: - This method is too complex, lets break it up''} - [from ArgoUml]
      
      \vspace{1mm}
 
-     \textit{``/* TODO: really should be a separate class */''}
+     \textit{``/* TODO: really should be a separate class */''} - [from ArgoUml]
   \end{displayquote}
   \vspace{1mm}
 
@@ -36,11 +34,11 @@ These comments are clear examples of what we consider as self-admitted \emph{des
   
   \vspace{1mm}
   \begin{displayquote}
-     \textit{``// I hate this so much even before I start writing it. // Re-initialising a global in a place where no-one will see it just // feels wrong.  Oh well, here goes.''}
+     \textit{``// I hate this so much even before I start writing it. // Re-initialising a global in a place where no-one will see it just // feels wrong.  Oh well, here goes.''} - [from ArgoUml]
 
      \vspace{1mm}
 
-     \textit{``//quick \& dirty, to make nested mapped p-sets work:''}
+     \textit{``//quick \& dirty, to make nested mapped p-sets work:''} - [from Apache Ant]
   \end{displayquote}
   \vspace{1mm}
 
@@ -48,11 +46,11 @@ In the above example comments the authors are certain to be implementing code th
 
   \vspace{1mm}
   \begin{displayquote}
-      \textit{``// probably not the best choice, but it solves the problem of // relative paths in CLASSPATH''}
+      \textit{``// probably not the best choice, but it solves the problem of // relative paths in CLASSPATH''} - [from Apache Ant]
 
       \vspace{1mm}
 
-      \textit{``//I can't get my head around this; is encoding treatment needed here?''}
+      \textit{``//I can't get my head around this; is encoding treatment needed here?''} - [from Apache Ant]
   \end{displayquote}
   \vspace{1mm}
 
@@ -62,11 +60,11 @@ The above comments expressed doubt and uncertainty when implementing the code an
   
   \vspace{1mm}
   \begin{displayquote}
-      \textit{``// Bug in above method''}
+      \textit{``// Bug in above method''} - [from Apache Jmeter]
 
       \vspace{1mm}
 
-      \textit{``// WARNING: the OutputStream version of this doesn't work!''}
+      \textit{``// WARNING: the OutputStream version of this doesn't work!''} - [from ArgoUml]
   \end{displayquote}
   \vspace{1mm}
   
@@ -76,11 +74,11 @@ As shown in these examples there are defects that are known by the developers, b
   
   \vspace{1mm}
   \begin{displayquote}
-  	\textit{``**FIXME** This function needs documentation''}
+  	\textit{``**FIXME** This function needs documentation''} - [from Columba]
   	
   	\vspace{1mm}
   	
-  	\textit{``// TODO Document the reason for this''}
+  	\textit{``// TODO Document the reason for this''} - [from Apache Jmeter]
   \end{displayquote}
   \vspace{1mm}
   
@@ -89,15 +87,15 @@ As shown in these examples there are defects that are known by the developers, b
   \item \textbf{Self-admitted requirement debt:} Requirement debt comments express incompleteness of the method, class or program as observed in the following comments:
   
   \begin{displayquote}
-  	\textit{``/TODO no methods yet for getClassname''}
+  	\textit{``/TODO no methods yet for getClassname''} - [from Apache Ant]
   	
   	\vspace{1mm}
   	
-  	\textit{``//TODO no method for newInstance using a reverse-classloader''}
+  	\textit{``//TODO no method for newInstance using a reverse-classloader''} - [from Apache Ant]
 
   	\vspace{1mm}
   	
-  	\textit{``TODO: The copy function is not yet * completely implemented - so we will  * have some exceptions here and there.*/''}  
+  	\textit{``TODO: The copy function is not yet * completely implemented - so we will  * have some exceptions here and there.*/''} - [from ArgoUml]  
   	
   \end{displayquote}
   \vspace{1mm}  
@@ -110,11 +108,11 @@ The last example shows a comment that could be considered as having more than on
   \item \textbf{Self-admitted test debt:} Test debt comments are the ones that express the need for implementation or improvement of the current tests. As shown in the examples below, test debt comments are very straight forward in their meaning. 
   
   \begin{displayquote}
-  	\textit{``// TODO - need a lot more tests''}
+  	\textit{``// TODO - need a lot more tests''} - [from Apache Jmeter]
   	
   	\vspace{1mm}
   	
-  	\textit{``//TODO enable some proper tests!!''}
+  	\textit{``//TODO enable some proper tests!!''} - [from Apache Jmeter]
   \end{displayquote}
   \vspace{1mm}  
     
