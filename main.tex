@@ -2,6 +2,7 @@
 
 \usepackage{amssymb,amsmath}
 \usepackage{wrapfig}
+\usepackage{varwidth}
 \usepackage{multirow}
 \usepackage{graphicx}
 \usepackage{algorithm}
@@ -23,9 +24,12 @@
 \usepackage{makecell}
 \usepackage[bottom]{footmisc}
 
-\newcommand{\everton}[1]{\textcolor{yellow}{{\it [Everton: #1]}}}
+\newcommand{\everton}[1]{\textcolor{red}{{\it [Everton: #1]}}}
 \newcommand{\emad}[1]{\textcolor{red}{{\it [Emad: #1]}}}
 \newcommand{\todo}[1]{\colorbox{yellow}{\textbf{[#1]}}}
+\newcommand{\revone}[1]{\colorbox{yellow}{\begin{varwidth}{\dimexpr\linewidth-4\fboxsep}\textbf{[Reviewer1: #1]}\end{varwidth}}}
+\newcommand{\revtwo}[1]{\colorbox{red}{\begin{varwidth}{\dimexpr\linewidth-4\fboxsep}\textbf{[Reviewer2: #1]}\end{varwidth}}}
+\newcommand{\revthree}[1]{\colorbox{blue}{\begin{varwidth}{\dimexpr\linewidth-4\fboxsep}\textbf{[Reviewer3: #1]}\end{varwidth}}}
 
 \newcommand{\conclusionbox}[1]{%
 	\vspace{2mm}
