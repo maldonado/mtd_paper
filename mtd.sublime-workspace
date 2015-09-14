@@ -1,0 +1,930 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"no",
+				"None"
+			],
+			[
+				"re",
+				"replace"
+			],
+			[
+				"r",
+				"randon_f1"
+			],
+			[
+				"tr",
+				"try	Try/Except/Finally"
+			],
+			[
+				"WI",
+				"WITHOUT_CLASSIFICATION"
+			],
+			[
+				"other",
+				"other_categories_comments"
+			],
+			[
+				"whi",
+				"without_classification_comments"
+			],
+			[
+				"o",
+				"other_categories_regex"
+			],
+			[
+				"op",
+				"opened_file"
+			],
+			[
+				"fol",
+				"folder_file_name"
+			],
+			[
+				"folder",
+				"folder_file"
+			],
+			[
+				"cur",
+				"current_folder"
+			],
+			[
+				"ec",
+				"execution_td_type"
+			],
+			[
+				"data",
+				"dataset_directories"
+			],
+			[
+				"DE",
+				"DEFECT"
+			],
+			[
+				"roo",
+				"root_dir"
+			],
+			[
+				"ra",
+				"randon_f1"
+			],
+			[
+				"rand",
+				"randon_recall"
+			],
+			[
+				"randon",
+				"randon_recall"
+			],
+			[
+				"rando",
+				"randon_precision"
+			],
+			[
+				"Wi",
+				"WITHOUT_CLASSIFICATION"
+			],
+			[
+				"randon_",
+				"randon_f1"
+			],
+			[
+				"pr",
+				"precision_blank_spaces"
+			],
+			[
+				"exec",
+				"execution_td_type"
+			],
+			[
+				"ran",
+				"randon_recall"
+			],
+			[
+				"te",
+				"technical_debt_comments"
+			],
+			[
+				"ou",
+				"output_file"
+			],
+			[
+				"toa",
+				"total_comments"
+			],
+			[
+				"to",
+				"total_comments_result"
+			],
+			[
+				"or",
+				"order"
+			],
+			[
+				"execution_",
+				"execution_types"
+			],
+			[
+				"pro",
+				"project_result"
+			],
+			[
+				"projec",
+				"project"
+			],
+			[
+				"test",
+				"test_project"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"tes",
+				"test_project"
+			],
+			[
+				"order",
+				"ordered_training_projects"
+			],
+			[
+				"project",
+				"projectname"
+			],
+			[
+				"ex",
+				"execution"
+			],
+			[
+				"tra",
+				"trainig_group"
+			],
+			[
+				"j",
+				"jruby-1"
+			],
+			[
+				"apa",
+				"apache-jmeter-2"
+			],
+			[
+				"wri",
+				"write_output_file"
+			],
+			[
+				"wr",
+				"write_output_file"
+			],
+			[
+				"cla",
+				"classifier_results"
+			],
+			[
+				"sub",
+				"subprocess_string"
+			],
+			[
+				"e",
+				"e"
+			],
+			[
+				"sta",
+				"stanford-classifier"
+			],
+			[
+				"writr",
+				"write_classifier_properties_file"
+			],
+			[
+				"st",
+				"stanford_classifier_path"
+			],
+			[
+				"pa",
+				"path_to_store_data"
+			],
+			[
+				"num",
+				"number_of_training_projects"
+			],
+			[
+				"da",
+				"dataset_directories"
+			],
+			[
+				"WH",
+				"WITHOUT_CLASSIFICATION"
+			],
+			[
+				"W",
+				"WITHOUT_CLASSIFICATION"
+			],
+			[
+				"file",
+				"file_name"
+			],
+			[
+				"commen",
+				"commentText"
+			],
+			[
+				"class",
+				"classification"
+			],
+			[
+				"co",
+				"columns"
+			],
+			[
+				"com",
+				"commentText"
+			],
+			[
+				"li",
+				"lite_db"
+			],
+			[
+				"psql",
+				"psql_con"
+			],
+			[
+				"comm",
+				"commentType"
+			],
+			[
+				"ps",
+				"psql_comment_class_id"
+			],
+			[
+				"fe",
+				"fetchall"
+			],
+			[
+				"s",
+				"sqlite_comment_class_id"
+			],
+			[
+				"comment",
+				"comment_class"
+			],
+			[
+				"lite",
+				"lite_cursor"
+			],
+			[
+				"en",
+				"endline"
+			],
+			[
+				"is",
+				"isEnum"
+			],
+			[
+				"fin",
+				"fileName"
+			],
+			[
+				"bug",
+				"bug_id"
+			],
+			[
+				"bu",
+				"bug_report_date"
+			],
+			[
+				"reported_",
+				"reported_date"
+			],
+			[
+				"sc",
+				"scraped_bug_summary"
+			],
+			[
+				"bugf",
+				"bugfix_commits"
+			],
+			[
+				"me",
+				"metric_name"
+			],
+			[
+				"rel",
+				"release"
+			],
+			[
+				"rele",
+				"release_number"
+			],
+			[
+				"Gu",
+				"guru_classification"
+			],
+			[
+				"ch",
+				"chromium_connection"
+			],
+			[
+				"gu",
+				"guru_files_changed"
+			],
+			[
+				"commit_",
+				"commit_guru_info"
+			],
+			[
+				"comi",
+				"commits"
+			],
+			[
+				"files",
+				"files_changed"
+			],
+			[
+				"for",
+				"forin	for … in … done"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"git s",
+				"Git: Status"
+			],
+			[
+				"qui",
+				"Git: Quick Commit"
+			],
+			[
+				"git add",
+				"Git: Add..."
+			],
+			[
+				"togle",
+				"View: Toggle Side Bar"
+			],
+			[
+				"gis",
+				"Git: Status"
+			],
+			[
+				"vies",
+				"View: Toggle Side Bar"
+			],
+			[
+				"too",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"add",
+				"Git: Add..."
+			],
+			[
+				"pus",
+				"Git: Push"
+			],
+			[
+				"com",
+				"Git: Commit"
+			],
+			[
+				"git ",
+				"Git: Commit"
+			],
+			[
+				"g  a",
+				"Git: Add..."
+			],
+			[
+				"g  c",
+				"Git: Commit"
+			],
+			[
+				"g add",
+				"Git: Add..."
+			],
+			[
+				"gs",
+				"Git: Status"
+			],
+			[
+				"gpu",
+				"Git: Push"
+			],
+			[
+				"git qui",
+				"Git: Quick Commit"
+			],
+			[
+				"git c",
+				"Git: Commit"
+			],
+			[
+				"pull",
+				"Git: Pull"
+			],
+			[
+				"push",
+				"Git: Push"
+			],
+			[
+				"pu",
+				"Git: Push"
+			],
+			[
+				"git pus",
+				"Git: Push"
+			],
+			[
+				"git commit",
+				"Git: Commit"
+			],
+			[
+				"GIT ",
+				"Git: Commit"
+			],
+			[
+				"GIT add",
+				"Git: Add..."
+			],
+			[
+				"GIT P",
+				"Git: Push"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"git st",
+				"Git: Status"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git a",
+				"Git: Add..."
+			],
+			[
+				"git pu",
+				"Git: Push"
+			],
+			[
+				"sta",
+				"Git: Status"
+			],
+			[
+				"gi add",
+				"Git: Add..."
+			],
+			[
+				"g",
+				"Git: Status"
+			],
+			[
+				"git p",
+				"Git: Pull"
+			],
+			[
+				"git COMM",
+				"Git: Commit"
+			],
+			[
+				"git ADD",
+				"Git: Add..."
+			],
+			[
+				"git co",
+				"Git: Commit"
+			],
+			[
+				"git com",
+				"Git: Commit"
+			],
+			[
+				"git ad",
+				"Git: Add..."
+			],
+			[
+				"side",
+				"View: Toggle Side Bar"
+			],
+			[
+				"dr",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"late",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/evermal/git/mtd_paper"
+	],
+	"file_history":
+	[
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/decrescent/apache-ant-1.7.0/1/classified_seq.train",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/decrescent/apache-ant-1.7.0/2/classified_seq.train",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/decrescent/apache-ant-1.7.0/3/classified_seq.train",
+		"/Users/evermal/git/npl_tools/classified_seq.train",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/decrescent/argouml/9/classified_seq.train",
+		"/Users/evermal/git/mtd_paper/main.aux",
+		"/Users/evermal/git/npl_tools/datasets/defect_vs_without_classification/decrescent/argouml/9/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/decrescent/apache-jmeter-2.10/8/results.txt",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/4charAnagrams/crescent/apache-jmeter-2.10/8/results.txt",
+		"/Users/evermal/git/npl_tools/datasets/defect_vs_without_classification/4charAnagrams/decrescent/apache-jmeter-2.10/8/results.txt",
+		"/Users/evermal/git/npl_tools/datasets/all_classes/hibernate-distribution-3.3.2.GA/9/top_features.txt",
+		"/Users/evermal/git/npl_tools/paper/discussion.tex",
+		"/Users/evermal/git/npl_tools/paper/appendix_table.tex",
+		"/Users/evermal/git/evolution_data_mining/data_transformation/create_csv_files.sql",
+		"/Users/evermal/git/npl_tools/datasets/all_classes/hibernate-distribution-3.3.2.GA/9/classified_seq.train",
+		"/Users/evermal/Dropbox/publications/conferences/design-technical-debt/Msr2015/Emad/results.tex",
+		"/Users/evermal/Dropbox/publications/conferences/design-technical-debt/Msr2015/Emad/discussion.tex",
+		"/Users/evermal/git/npl_tools/randon_values_calculator.py",
+		"/Users/evermal/git/npl_tools/generate_classification_files_all_projects.py",
+		"/Users/evermal/git/npl_tools/store_results.py",
+		"/Users/evermal/git/npl_tools/randon_values.md",
+		"/Users/evermal/git/npl_tools/datasets/random_values.md",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/crescent/apache-jmeter-2.10/1/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/test_vs_without_classification/apache-ant-1.7.0/1/dataset.prop",
+		"/Users/evermal/git/npl_tools/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/all_classes/apache-ant-1.7.0/1/dataset.prop",
+		"/Users/evermal/git/npl_tools/output.txt",
+		"/Users/evermal/git/npl_tools/README.md",
+		"/Users/evermal/git/npl_tools/datasets/design_vs_without_classification/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/readme.md",
+		"/Users/evermal/git/npl_tools/env/lib/python2.7/no-global-site-packages.txt",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/jmeter_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/jfreechart_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/columba_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/argo_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/ant_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/design_vs_without_classification/jmeter_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/design_vs_without_classification/ant_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/design_vs_without_classification/jfreechart_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/design_vs_without_classification/columba_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/design_vs_without_classification/argo_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/test_vs_without_classification/ant_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/test_vs_without_classification/argo_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/test_vs_without_classification/columba_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/test_vs_without_classification/jfreechart_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/test_vs_without_classification/jmeter_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/documentation_vs_without_classification/jmeter_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/documentation_vs_without_classification/ant_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/documentation_vs_without_classification/argo_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/documentation_vs_without_classification/columba_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/documentation_vs_without_classification/jfreechart_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/defect_vs_without_classification/jmeter_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/defect_vs_without_classification/ant_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/defect_vs_without_classification/argo_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/defect_vs_without_classification/columba_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/defect_vs_without_classification/jfreechart_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/all_classes/ant_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/all_classes/columba_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/all_classes/jfreechart_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/all_classes/jmeter_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/all_classes/argo_tested/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/all_classes/jfreechart_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/all_classes/argo_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/defect_vs_without_classification/argo_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/design_vs_without_classification/argo_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/documentation_vs_without_classification/argo_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/argo_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/test_vs_without_classification/argo_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/test_vs_without_classification/jmeter_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/jmeter_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/documentation_vs_without_classification/jmeter_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/design_vs_without_classification/jmeter_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/defect_vs_without_classification/jmeter_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/all_classes/jmeter_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/design_vs_without_classification/jfreechart_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/test_vs_without_classification/jfreechart_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/jfreechart_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/documentation_vs_without_classification/jfreechart_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/defect_vs_without_classification/jfreechart_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/test_vs_without_classification/columba_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/columba_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/documentation_vs_without_classification/columba_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/design_vs_without_classification/columba_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/defect_vs_without_classification/columba_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/all_classes/columba_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/test_vs_without_classification/jmeter_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/ant_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/argo_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/columba_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/jfreechart_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/jmeter_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/test_vs_without_classification/ant_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/test_vs_without_classification/argo_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/test_vs_without_classification/columba_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/test_vs_without_classification/jfreechart_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/documentation_vs_without_classification/jmeter_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/design_vs_without_classification/argo_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/documentation_vs_without_classification/ant_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/documentation_vs_without_classification/argo_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/documentation_vs_without_classification/columba_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/documentation_vs_without_classification/jfreechart_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/design_vs_without_classification/ant_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/design_vs_without_classification/columba_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/design_vs_without_classification/jfreechart_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/design_vs_without_classification/jmeter_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/defect_vs_without_classification/ant_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/defect_vs_without_classification/argo_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/defect_vs_without_classification/columba_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/defect_vs_without_classification/jfreechart_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/defect_vs_without_classification/jmeter_tested/generate_classification_files.py",
+		"/Users/evermal/git/npl_tools/datasets/test_vs_without_classification/ant_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/implementation_vs_without_classification/ant_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/documentation_vs_without_classification/ant_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/design_vs_without_classification/ant_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/defect_vs_without_classification/ant_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/all_classes/ant_tested/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/all_classes/argo_tested/classified_seq_old.train",
+		"/Users/evermal/git/npl_tools/classified_seq.test",
+		"/Users/evermal/git/npl_tools/datasets/all_classes/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/all_classes/training_data_generator.py",
+		"/Users/evermal/git/npl_tools/test_data_generator.py",
+		"/Users/evermal/git/npl_tools/datasets/defect_vs_without_classification/dataset.prop",
+		"/Users/evermal/git/npl_tools/datasets/all_classes/test_data_generator.py",
+		"/Users/evermal/git/npl_tools/datasets/all_classes/classified_seq.test",
+		"/Users/evermal/git/npl_tools/datasets/defect_vs_without_classification/training_data_generator.py",
+		"/Users/evermal/git/npl_tools/datasets/defect_vs_without_classification/test_data_generator.py",
+		"/Users/evermal/git/npl_tools/datasets/defect_vs_without_classification/readme.md",
+		"/Users/evermal/git/npl_tools/datasets/test_vs_without_classification/dataset.prop"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"execution_options",
+			"coments_in_training_data",
+			"randon_precision",
+			"blank_spaces",
+			"technical_debt_comments",
+			"path",
+			"dataset_directories",
+			"project",
+			"td_type",
+			"write_in_file",
+			"',",
+			"argo_tested",
+			"classified_seq",
+			"argo_tested",
+			"classified_seq",
+			"argo_tested",
+			"classified_seq",
+			"argo_tested",
+			"not",
+			"not in",
+			"classification",
+			"classified_seq",
+			"argo_tested",
+			"classified_seq",
+			"argouml",
+			"    \n",
+			"BUG_FIX_COMMENT",
+			"WITHOUT_CLASSIFICATION",
+			"TEST",
+			"test",
+			"test_vs_without_classification",
+			"IMPLEMENTATION",
+			"implementation",
+			"implementation_vs_without_classification",
+			"test_vs_without_classification",
+			"implementation_vs_without_classification",
+			"IMPLEMENTATION",
+			"implementation_vs_without_classification",
+			"implementation",
+			"DESIGN",
+			"design_vs_without_classification",
+			"all_classes",
+			"Parameters",
+			"a.commenttext, a.classification",
+			"a",
+			"Lentigo",
+			"Lentigo, Malignant",
+			"-",
+			"    -",
+			"processed_comment",
+			"boolean",
+			"cursor",
+			"r26_defect_debt_sum",
+			"41",
+			"connection",
+			"cursor",
+			"connection"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 118.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 30.0
+	},
+	"pinned_build_system": "",
+	"project": "mtd.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"miante",
+				"main.tex"
+			],
+			[
+				"main",
+				"main.aux"
+			],
+			[
+				"",
+				"paper/approach.tex"
+			],
+			[
+				"appro",
+				"paper/approach.tex"
+			],
+			[
+				"results",
+				"paper/results.tex"
+			],
+			[
+				"gs",
+				"env/lib/python2.7/no-global-site-packages.txt"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "npl",
+		"selected_items":
+		[
+			[
+				"npl",
+				"~/git/npl_tools/npl.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 47.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 237.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
